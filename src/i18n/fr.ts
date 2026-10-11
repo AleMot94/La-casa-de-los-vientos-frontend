@@ -5,7 +5,7 @@ import type { Translation } from './es'
 export const fr: Translation = {
   'meta.title': 'La Casa de los Vientos · Auberge à Salta',
   'meta.description':
-    'Auberge à San Carlos, vallée Calchaquí, Salta. Chambres privées, petit-déjeuner salteño et ambiance familiale. Vérifiez les disponibilités sur WhatsApp.',
+    'Auberge à San Carlos, vallée Calchaquí, Salta. Chambres privées, petit-déjeuner salteño et ambiance familiale. Écrivez-nous sur WhatsApp.',
   'lang.label': 'Langue',
 
   'nav.label': 'Principale',
@@ -27,13 +27,21 @@ export const fr: Translation = {
   'highlight.family.title': 'Ambiance familiale',
   'highlight.family.text': 'La chaleur d’un foyer',
 
-  'booking.formLabel': 'Vérifier les disponibilités',
+  'booking.formLabel': 'Demande par WhatsApp',
   'booking.checkIn': 'Arrivée',
   'booking.checkOut': 'Départ',
   'booking.guests': 'Voyageurs',
   'booking.room': 'Chambre',
   'booking.anyRoom': 'Indifférent',
-  'booking.submit': 'Voir les disponibilités',
+  'booking.submit': 'Consulter par WhatsApp',
+  'booking.error.checkIn.required': 'Choisissez la date d’arrivée.',
+  'booking.error.checkIn.past': 'L’arrivée ne peut pas être antérieure à aujourd’hui.',
+  'booking.error.checkOut.required': 'Choisissez la date de départ.',
+  'booking.error.checkOut.notAfter': 'Le départ doit être postérieur à l’arrivée.',
+  'booking.error.guests.required': 'Indiquez le nombre de voyageurs.',
+  'booking.error.guests.range': 'Indiquez entre 1 et {max} voyageurs.',
+  'booking.opened': 'Nous avons ouvert WhatsApp avec votre demande. Le message est envoyé quand vous appuyez sur Envoyer.',
+  'booking.openedFallback': 'S’il ne s’est pas ouvert, appuyez ici.',
 
   'about.overline': 'Patrimoine Calchaquí & Racines',
   'about.title': 'Là où le vent de la montagne murmure l’histoire de la demeure',
@@ -88,6 +96,11 @@ export const fr: Translation = {
   'contact.email': 'E-mail',
   'contact.instagram': 'Instagram',
   'whatsapp.generic': 'Bonjour ! Je souhaiterais des renseignements sur {name}.',
+  'whatsapp.booking.intro': 'Bonjour ! Je souhaiterais connaître les disponibilités à {name}.',
+  'whatsapp.booking.checkIn': '• Arrivée : {date}',
+  'whatsapp.booking.checkOut': '• Départ : {date}',
+  'whatsapp.booking.guests': '• Voyageurs : {count}',
+  'whatsapp.booking.room': '• Chambre : {room}',
 
   'footer.description':
     'Auberge coloniale au cœur des vallées Calchaquíes. Sérénité, silence andin et hospitalité ancestrale de Salta.',

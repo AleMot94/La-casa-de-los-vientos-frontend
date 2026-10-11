@@ -9,7 +9,7 @@ export const es = {
   // ── Página ────────────────────────────────────────────────────────────────
   'meta.title': 'La Casa de los Vientos · Hostería en Salta',
   'meta.description':
-    'Hostería en San Carlos, Valle Calchaquí, Salta. Habitaciones privadas, desayuno salteño y ambiente familiar. Consultá disponibilidad por WhatsApp.',
+    'Hostería en San Carlos, Valle Calchaquí, Salta. Habitaciones privadas, desayuno salteño y ambiente familiar. Hacé tu consulta por WhatsApp.',
   'lang.label': 'Idioma',
 
   // ── Navegación ────────────────────────────────────────────────────────────
@@ -36,13 +36,22 @@ export const es = {
   'highlight.family.text': 'Calidez de hogar',
 
   // ── Barra de consulta ─────────────────────────────────────────────────────
-  'booking.formLabel': 'Consultar disponibilidad',
+  // Es una consulta por WhatsApp: la página no muestra ni confirma disponibilidad (la responden los dueños).
+  'booking.formLabel': 'Consulta por WhatsApp',
   'booking.checkIn': 'Llegada',
   'booking.checkOut': 'Salida',
   'booking.guests': 'Huéspedes',
   'booking.room': 'Habitación',
-  'booking.anyRoom': 'Cualquiera disponible',
-  'booking.submit': 'Ver Disponibilidad',
+  'booking.anyRoom': 'Sin preferencia',
+  'booking.submit': 'Consultar por WhatsApp',
+  'booking.error.checkIn.required': 'Elegí la fecha de llegada.',
+  'booking.error.checkIn.past': 'La llegada no puede ser anterior a hoy.',
+  'booking.error.checkOut.required': 'Elegí la fecha de salida.',
+  'booking.error.checkOut.notAfter': 'La salida tiene que ser posterior a la llegada.',
+  'booking.error.guests.required': 'Indicá cuántas personas son.',
+  'booking.error.guests.range': 'Ingresá entre 1 y {max} huéspedes.',
+  'booking.opened': 'Abrimos WhatsApp con tu consulta. El mensaje se envía cuando tocás Enviar.',
+  'booking.openedFallback': 'Si no se abrió, tocá acá.',
 
   // ── Conocenos ─────────────────────────────────────────────────────────────
   // TODO(confirmar): toda la historia y la construcción vienen del mockup, no del cliente.
@@ -105,6 +114,12 @@ export const es = {
   'contact.email': 'Correo electrónico',
   'contact.instagram': 'Instagram',
   'whatsapp.generic': '¡Hola! Quisiera hacer una consulta sobre {name}.',
+  // Mensaje de la barra de consulta: una pregunta al dueño (la viñeta va dentro de cada línea).
+  'whatsapp.booking.intro': '¡Hola! Quisiera consultar disponibilidad en {name}.',
+  'whatsapp.booking.checkIn': '• Ingreso: {date}',
+  'whatsapp.booking.checkOut': '• Egreso: {date}',
+  'whatsapp.booking.guests': '• Huéspedes: {count}',
+  'whatsapp.booking.room': '• Habitación: {room}',
 
   // ── Footer ────────────────────────────────────────────────────────────────
   // TODO(confirmar): «colonial» es del mockup.

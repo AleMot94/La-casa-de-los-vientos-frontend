@@ -4,7 +4,7 @@ import type { Translation } from './es'
 export const en: Translation = {
   'meta.title': 'La Casa de los Vientos · Inn in Salta',
   'meta.description':
-    'Inn in San Carlos, Calchaquí Valley, Salta. Private rooms, a Salta-style breakfast and a family atmosphere. Check availability on WhatsApp.',
+    'Inn in San Carlos, Calchaquí Valley, Salta. Private rooms, a Salta-style breakfast and a family atmosphere. Send us your enquiry on WhatsApp.',
   'lang.label': 'Language',
 
   'nav.label': 'Main',
@@ -26,13 +26,21 @@ export const en: Translation = {
   'highlight.family.title': 'Family atmosphere',
   'highlight.family.text': 'The warmth of home',
 
-  'booking.formLabel': 'Check availability',
+  'booking.formLabel': 'Send an enquiry on WhatsApp',
   'booking.checkIn': 'Arrival',
   'booking.checkOut': 'Departure',
   'booking.guests': 'Guests',
   'booking.room': 'Room',
-  'booking.anyRoom': 'Any available',
-  'booking.submit': 'Check Availability',
+  'booking.anyRoom': 'No preference',
+  'booking.submit': 'Ask on WhatsApp',
+  'booking.error.checkIn.required': 'Choose an arrival date.',
+  'booking.error.checkIn.past': 'Arrival can’t be before today.',
+  'booking.error.checkOut.required': 'Choose a departure date.',
+  'booking.error.checkOut.notAfter': 'Departure must be after arrival.',
+  'booking.error.guests.required': 'Enter the number of guests.',
+  'booking.error.guests.range': 'Enter between 1 and {max} guests.',
+  'booking.opened': 'We opened WhatsApp with your enquiry. The message is sent when you tap Send.',
+  'booking.openedFallback': 'If it didn’t open, tap here.',
 
   'about.overline': 'Calchaquí Heritage & Roots',
   'about.title': 'Where the mountain wind whispers the story of the old house',
@@ -87,6 +95,11 @@ export const en: Translation = {
   'contact.email': 'Email',
   'contact.instagram': 'Instagram',
   'whatsapp.generic': 'Hello! I’d like to ask about {name}.',
+  'whatsapp.booking.intro': 'Hello! I’d like to ask about availability at {name}.',
+  'whatsapp.booking.checkIn': '• Check-in: {date}',
+  'whatsapp.booking.checkOut': '• Check-out: {date}',
+  'whatsapp.booking.guests': '• Guests: {count}',
+  'whatsapp.booking.room': '• Room: {room}',
 
   'footer.description':
     'Colonial inn in the heart of the Calchaquí Valleys. Serenity, Andean silence and ancestral Salta hospitality.',

@@ -37,18 +37,19 @@ React + Vite + TypeScript + Tailwind CSS (v4, plugin `@tailwindcss/vite`). Tests
 
 ## Estructura de `src/`
 - `App.tsx`: arma la página.
-- `components/`: una sección por archivo (`Header`, `Hero` + `BookingBar`, `About`, `Rooms`, `Facilities`, `Contact`, `Footer`) más `LanguageSelect`, `Photo` (+ `PhotoPlaceholder`: pulsa mientras `status` es `loading`; la foto aparece con un fundido al terminar de bajar), `PhotoGallery` (carrusel `scroll-snap`; pide cada foto recién cuando se acerca), `Icon`, `Logo`, `SectionHeading`.
+- `components/`: una sección por archivo (`Header`, `Hero` + `BookingBar`, `About`, `Rooms`, `Facilities`, `Contact`, `Footer`) más `LanguageSelect`, `Photo` (+ `PhotoPlaceholder`: pulsa mientras `status` es `loading`; la foto aparece con un fundido al terminar de bajar), `PhotoGallery` (carrusel `scroll-snap`; pide cada foto recién cuando se acerca), `Icon`, `Logo`, `SectionHeading`, `WhatsAppIcon` (SVG inline).
 - `i18n/`: `es.ts` (claves y textos, fuente de verdad), `en.ts`, `fr.ts`, `pt-BR.ts`; `translations.ts` (ensambla y exporta `LANGS`), `translate.ts` (`makeT`: reemplaza `{variables}`), `format.ts` (camas, capacidad y fecha larga con `Intl`), `detect.ts` (idioma inicial), `I18nProvider.tsx` + `useI18n.ts` (`const { t, lang, setLang, describeBeds, describeCapacity, formatDate } = useI18n()`).
 - `photos/`: `context.ts` (`Photos` = `{ status, getPhoto }`, `PhotosStatus`), `PhotosProvider.tsx` (estado `{ status, photos }` + `useEffect` con `AbortController`), `usePhotos.ts`. Mismo patrón que `i18n/`.
 - `api/contract.ts`: **solo tipos y constantes** del contrato con el backend futuro. `api/photos.ts`: `loadPhotos(signal)`, el único lugar donde se piden las fotos.
 - `data/`: `siteConfig.ts` (datos del negocio), `rooms.ts`, `facilities.ts`, `platforms.ts` (documentos, módulos puros importables desde Node), `nav.ts`, `photoIds.ts`. Tests en `data.test.ts`.
-- `lib/`: `dates.ts` (fechas locales y `YYYY-MM-DD`), `photo.ts` (`srcset`, archivo de respaldo, `indexPhotos`), `whatsapp.ts`.
+- `lib/`: `dates.ts` (fechas locales y `YYYY-MM-DD`), `photo.ts` (`srcset`, archivo de respaldo, `indexPhotos`), `validation.ts` (`validateBooking`: funciones puras que devuelven códigos de error, no textos), `whatsapp.ts` (`whatsappLink`, `bookingMessage`).
 - `assets/img/hero.svg`: único SVG que queda (placeholder del hero).
 
 ## Notas técnicas
 - Idioma inicial: el elegido antes (`localStorage`, clave `lang`) → idioma del navegador si es uno de los cuatro (`pt-PT` cae en `pt-BR`) → español. Cambiarlo actualiza `<html lang>`, `<title>` y la meta description. Con una sola URL los buscadores indexan una sola versión: el SEO por idioma exigiría una URL por idioma con prerenderizado.
 - Textos con negrita o enlaces dentro: se parten en claves (`about.p1.before` / `after`), no se guarda HTML en los diccionarios.
-- Sin backend: el formulario del hero abrirá WhatsApp (`wa.me`) con el mensaje armado; el de contacto irá a un endpoint configurable.
+- Sin backend: el formulario del hero (`BookingBar`) es una **consulta**: valida (`noValidate` + `lib/validation.ts`; los atributos HTML quedan para teclado y límites del selector), arma el mensaje en el idioma activo (plantillas `whatsapp.booking.*`, fechas con el mes en letras) y abre WhatsApp (`wa.me`) con `window.open(url, '_blank', 'noopener,noreferrer')`. Con `noopener` devuelve siempre `null` (no se puede saber si lo bloquearon), así que siempre se muestra el enlace de respaldo. El de contacto irá a un endpoint configurable.
+- **La disponibilidad se maneja a mano por WhatsApp (los dueños).** La página no la muestra, no la calcula ni promete confirmaciones ni plazos: ningún texto puede insinuarlo (por eso «Sin preferencia» y no «Cualquiera disponible»). «Quisiera consultar disponibilidad» en el mensaje está bien: es una pregunta al dueño.
 - Fechas del contrato como texto `YYYY-MM-DD`, nunca `Date` (`new Date('2026-12-15')` es medianoche UTC y en Argentina da el 14).
 - Íconos: Material Symbols (Google Fonts, ver `index.html`) vía `<Icon name="..." />`.
 - No usar `overline` como nombre de clase propia: choca con la utilidad de Tailwind. La del sistema se llama `kicker`.

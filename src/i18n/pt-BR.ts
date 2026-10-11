@@ -5,7 +5,7 @@ import type { Translation } from './es'
 export const ptBR: Translation = {
   'meta.title': 'La Casa de los Vientos · Pousada em Salta',
   'meta.description':
-    'Pousada em San Carlos, Vale Calchaquí, Salta. Quartos privativos, café da manhã salteño e ambiente familiar. Consulte a disponibilidade pelo WhatsApp.',
+    'Pousada em San Carlos, Vale Calchaquí, Salta. Quartos privativos, café da manhã salteño e ambiente familiar. Faça sua consulta pelo WhatsApp.',
   'lang.label': 'Idioma',
 
   'nav.label': 'Principal',
@@ -27,13 +27,21 @@ export const ptBR: Translation = {
   'highlight.family.title': 'Ambiente familiar',
   'highlight.family.text': 'Aconchego de casa',
 
-  'booking.formLabel': 'Consultar disponibilidade',
+  'booking.formLabel': 'Consulta pelo WhatsApp',
   'booking.checkIn': 'Chegada',
   'booking.checkOut': 'Saída',
   'booking.guests': 'Hóspedes',
   'booking.room': 'Quarto',
   'booking.anyRoom': 'Sem preferência',
-  'booking.submit': 'Ver disponibilidade',
+  'booking.submit': 'Consultar pelo WhatsApp',
+  'booking.error.checkIn.required': 'Escolha a data de chegada.',
+  'booking.error.checkIn.past': 'A chegada não pode ser anterior a hoje.',
+  'booking.error.checkOut.required': 'Escolha a data de saída.',
+  'booking.error.checkOut.notAfter': 'A saída precisa ser posterior à chegada.',
+  'booking.error.guests.required': 'Informe quantas pessoas são.',
+  'booking.error.guests.range': 'Informe entre 1 e {max} hóspedes.',
+  'booking.opened': 'Abrimos o WhatsApp com a sua consulta. A mensagem é enviada quando você tocar em Enviar.',
+  'booking.openedFallback': 'Se não abriu, toque aqui.',
 
   'about.overline': 'Patrimônio Calchaquí & Raízes',
   'about.title': 'Onde o vento da serra sussurra a história da casona',
@@ -88,6 +96,11 @@ export const ptBR: Translation = {
   'contact.email': 'E-mail',
   'contact.instagram': 'Instagram',
   'whatsapp.generic': 'Olá! Gostaria de fazer uma consulta sobre {name}.',
+  'whatsapp.booking.intro': 'Olá! Gostaria de consultar a disponibilidade em {name}.',
+  'whatsapp.booking.checkIn': '• Entrada: {date}',
+  'whatsapp.booking.checkOut': '• Saída: {date}',
+  'whatsapp.booking.guests': '• Hóspedes: {count}',
+  'whatsapp.booking.room': '• Quarto: {room}',
 
   'footer.description':
     'Pousada colonial no coração dos Vales Calchaquíes. Serenidade, silêncio andino e hospitalidade ancestral salteña.',
