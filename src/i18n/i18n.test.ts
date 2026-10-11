@@ -28,10 +28,13 @@ describe('diccionarios', () => {
 describe('textos sin traducir', () => {
   // Claves que en ese idioma se escriben igual que en español (nombres propios, marcas o palabras iguales).
   const igualesAlEspanol: Record<Exclude<Lang, 'es'>, TranslationKey[]> = {
-    en: ['contact.instagram', 'contact.whatsapp', 'facility.patios.title', 'footer.address3', 'footer.whatsapp'],
-    fr: ['contact.instagram', 'contact.whatsapp', 'facility.patios.title', 'footer.whatsapp'],
+    en: ['contact.instagram', 'contact.platforms.airbnb', 'contact.platforms.booking', 'contact.whatsapp', 'facility.patios.title', 'footer.address3', 'footer.whatsapp'],
+    fr: ['contact.instagram', 'contact.platforms.airbnb', 'contact.platforms.booking', 'contact.whatsapp', 'facility.patios.title', 'footer.whatsapp'],
     'pt-BR': [
+      'contact.form.sending',
       'contact.instagram',
+      'contact.platforms.airbnb',
+      'contact.platforms.booking',
       'contact.whatsapp',
       'footer.address3',
       'footer.explore',

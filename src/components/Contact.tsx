@@ -1,11 +1,18 @@
 import { Fragment } from 'react'
 import { siteConfig } from '../data/siteConfig'
 import { useI18n } from '../i18n/useI18n'
+import { contactEndpoint } from '../lib/contactClient'
 import { whatsappLink } from '../lib/whatsapp'
+import { ContactForm } from './ContactForm'
 import { Icon } from './Icon'
+import { PlatformCards } from './PlatformCards'
 import { SectionHeading } from './SectionHeading'
 
 const { contact, social, location, maps } = siteConfig
+const endpoint = contactEndpoint()
+// Sin endpoint el formulario no puede enviar: en producción no se muestra (queda el resto de los datos de
+// contacto); en desarrollo se ve, con un aviso, para poder trabajarlo.
+const showForm = Boolean(endpoint) || import.meta.env.DEV
 
 export function Contact() {
   const { t } = useI18n()
@@ -54,7 +61,7 @@ export function Contact() {
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <div className="flex flex-col justify-between gap-6 rounded-xl border border-mortar bg-sand p-6 shadow-soft md:p-8">
+          <div className="flex flex-col gap-5 rounded-xl border border-mortar bg-sand p-6 shadow-soft md:p-8">
             <div className="flex items-start gap-3">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-canvas">
                 <Icon name="pin_drop" className="!text-[20px]" />
@@ -63,6 +70,16 @@ export function Contact() {
                 <span className="font-display text-card text-primary">{location.locality}</span>
                 <span className="text-body text-ink-soft">{t('contact.address', { province: location.province })}</span>
               </address>
+            </div>
+            {/* Mapa embebido sin clave. Carga diferida: no se pide hasta que se acerca a la pantalla. */}
+            <div className="relative min-h-72 flex-1 overflow-hidden rounded-lg border border-mortar bg-mortar">
+              <iframe
+                src={maps.embedUrl}
+                title={t('contact.map.title', { name: siteConfig.name })}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full border-0"
+              />
             </div>
             <a
               href={maps.directionsUrl}
@@ -75,38 +92,43 @@ export function Contact() {
             </a>
           </div>
 
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {cards.map((c) => (
-              <li key={c.icon}>
-                <a
-                  href={c.href}
-                  className="group flex h-full items-start gap-3 rounded-lg border border-mortar bg-sand p-4 transition-colors hover:bg-mortar"
-                  {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                >
-                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${c.tone}`}>
-                    <Icon name={c.icon} className="!text-[20px]" />
-                  </span>
-                  <span className="flex min-w-0 flex-col">
-                    <span className="text-overline font-bold tracking-[0.1em] text-ink-soft uppercase">{c.label}</span>
-                    <span className="text-[14px] font-bold text-ink group-hover:text-primary">
-                      {/* <wbr> deja cortar el mail después de la @ en pantallas angostas. */}
-                      {c.value.split('@').map((part, i) => (
-                        <Fragment key={part}>
-                          {i > 0 && (
-                            <>
-                              @<wbr />
-                            </>
-                          )}
-                          {part}
-                        </Fragment>
-                      ))}
+          <div className="flex flex-col gap-8">
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {cards.map((c) => (
+                <li key={c.icon}>
+                  <a
+                    href={c.href}
+                    className="group flex h-full items-start gap-3 rounded-lg border border-mortar bg-sand p-4 transition-colors hover:bg-mortar"
+                    {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${c.tone}`}>
+                      <Icon name={c.icon} className="!text-[20px]" />
                     </span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
+                    <span className="flex min-w-0 flex-col">
+                      <span className="text-overline font-bold tracking-[0.1em] text-ink-soft uppercase">{c.label}</span>
+                      <span className="text-[14px] font-bold text-ink group-hover:text-primary">
+                        {/* <wbr> deja cortar el mail después de la @ en pantallas angostas. */}
+                        {c.value.split('@').map((part, i) => (
+                          <Fragment key={part}>
+                            {i > 0 && (
+                              <>
+                                @<wbr />
+                              </>
+                            )}
+                            {part}
+                          </Fragment>
+                        ))}
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <PlatformCards />
+          </div>
         </div>
+
+        {showForm && <ContactForm endpoint={endpoint} />}
       </div>
     </section>
   )

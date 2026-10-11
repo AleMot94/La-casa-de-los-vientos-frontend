@@ -25,3 +25,8 @@ dist-ssr
 
 # Claude Code
 .claude/settings.local.json
+
+# Variables de entorno (el ejemplo sí se versiona)
+.env
+.env.*
+!.env.example

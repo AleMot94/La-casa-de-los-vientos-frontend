@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { toISO, today } from './dates'
-import { validateBooking } from './validation'
+import { validateBooking, validateContact } from './validation'
 
 const HOY = '2026-12-15'
 const MAX = 25
@@ -105,5 +105,64 @@ describe('«hoy» en hora local', () => {
     expect(validateBooking({ ...valido, checkIn: '2026-12-15' }, toISO(today()), MAX).checkIn).toBeUndefined()
     // Con el «hoy» de UTC, el mismo 15 se rechazaría por error.
     expect(validateBooking({ ...valido, checkIn: '2026-12-15' }, '2026-12-16', MAX).checkIn).toBe('checkIn.past')
+  })
+})
+
+describe('validateContact', () => {
+  const ok = { name: 'Ana Pérez', email: 'ana@correo.com', phone: '', message: 'Quisiera consultar por una estadía.' }
+
+  it('un mensaje correcto no tiene errores (el teléfono es opcional)', () => {
+    expect(validateContact(ok)).toEqual({})
+    expect(validateContact({ ...ok, phone: '+54 9 3868 46-3838' })).toEqual({})
+  })
+
+  it.each([
+    ['', 'name.required'],
+    ['   ', 'name.required'],
+    ['A', 'name.length'],
+    ['x'.repeat(101), 'name.length'],
+  ])('nombre «%s» → %s', (name, esperado) => {
+    expect(validateContact({ ...ok, name }).name).toBe(esperado)
+  })
+
+  it('nombre en los límites (2 y 100) vale', () => {
+    expect(validateContact({ ...ok, name: 'Al' }).name).toBeUndefined()
+    expect(validateContact({ ...ok, name: 'x'.repeat(100) }).name).toBeUndefined()
+  })
+
+  it.each([
+    ['', 'email.required'],
+    ['ana', 'email.invalid'],
+    ['ana@', 'email.invalid'],
+    ['ana@correo', 'email.invalid'],
+    ['ana @correo.com', 'email.invalid'],
+    ['ana@@correo.com', 'email.invalid'],
+    [`${'a'.repeat(250)}@x.com`, 'email.invalid'],
+  ])('email «%s» → %s', (email, esperado) => {
+    expect(validateContact({ ...ok, email }).email).toBe(esperado)
+  })
+
+  it('el email con espacios en los bordes vale (se envía recortado)', () => {
+    expect(validateContact({ ...ok, email: '  ana@correo.com ' }).email).toBeUndefined()
+  })
+
+  it('teléfono: hasta 30 caracteres', () => {
+    expect(validateContact({ ...ok, phone: '1'.repeat(30) }).phone).toBeUndefined()
+    expect(validateContact({ ...ok, phone: '1'.repeat(31) }).phone).toBe('phone.length')
+  })
+
+  it.each([
+    ['', 'message.required'],
+    ['   \n  ', 'message.required'],
+    ['Hola', 'message.length'],
+    ['x'.repeat(2001), 'message.length'],
+  ])('mensaje «%s» → %s', (message, esperado) => {
+    expect(validateContact({ ...ok, message }).message).toBe(esperado)
+  })
+
+  it('mensaje en los límites (10 y 2000) vale; los espacios de los bordes no cuentan', () => {
+    expect(validateContact({ ...ok, message: 'x'.repeat(10) }).message).toBeUndefined()
+    expect(validateContact({ ...ok, message: 'x'.repeat(2000) }).message).toBeUndefined()
+    expect(validateContact({ ...ok, message: `  ${'x'.repeat(9)}  ` }).message).toBe('message.length')
   })
 })
