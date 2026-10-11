@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagen de ejemplo: Galería y mirador">
-<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d98d6c"/><stop offset="1" stop-color="#f3cfa8"/></linearGradient></defs>
-<rect width="1600" height="1000" fill="url(#s)"/>
-<circle cx="400" cy="300" r="110" fill="#ffe9c4" opacity="0.85"/>
-<polygon points="0,1000 0,462 160,530 320,491 480,543 640,548 800,424 960,413 1120,594 1280,467 1440,462 1600,629 1600,1000" fill="#a8503f" opacity="0.9"/><polygon points="0,1000 0,645 178,704 356,646 533,672 711,594 889,672 1067,709 1244,654 1422,689 1600,677 1600,1000" fill="#7b1e2b" opacity="0.95"/><polygon points="0,1000 0,756 200,826 400,809 600,780 800,753 1000,837 1200,797 1400,822 1600,838 1600,1000" fill="#4b1a22" opacity="1.0"/></svg>

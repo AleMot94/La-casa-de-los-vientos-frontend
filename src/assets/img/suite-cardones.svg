@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagen de ejemplo: Suite Colonial Los Cardones">
-<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7b28a"/><stop offset="1" stop-color="#f4e6d0"/></linearGradient></defs>
-<rect width="1600" height="1000" fill="url(#s)"/>
-<circle cx="300" cy="280" r="90" fill="#fff6e0" opacity="0.85"/>
-<polygon points="0,1000 0,595 178,582 356,549 533,651 711,531 889,600 1067,656 1244,541 1422,608 1600,616 1600,1000" fill="#a98055" opacity="0.85"/><polygon points="0,1000 0,684 200,718 400,750 600,725 800,753 1000,696 1200,704 1400,691 1600,731 1600,1000" fill="#7d5a3d" opacity="1.0"/><polygon points="0,1000 0,870 229,846 457,859 686,832 914,857 1143,812 1371,825 1600,852 1600,1000" fill="#55402e" opacity="1.0"/></svg>

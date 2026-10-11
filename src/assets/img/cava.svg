@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagen de ejemplo: Cava de altura">
-<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a1d1f"/><stop offset="1" stop-color="#6b2a2b"/></linearGradient></defs>
-<rect width="1600" height="1000" fill="url(#s)"/>
-<circle cx="800" cy="380" r="70" fill="#f2b179" opacity="0.85"/>
-<polygon points="0,1000 0,588 133,572 267,608 400,579 533,568 667,608 800,670 933,656 1067,652 1200,587 1333,624 1467,593 1600,581 1600,1000" fill="#2d1517" opacity="0.9"/><polygon points="0,1000 0,728 160,737 320,794 480,786 640,785 800,784 960,735 1120,745 1280,770 1440,779 1600,788 1600,1000" fill="#1f0f11" opacity="1.0"/></svg>

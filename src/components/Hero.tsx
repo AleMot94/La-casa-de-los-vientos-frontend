@@ -1,19 +1,22 @@
-import { heroImage, highlights } from '../data/site'
-import type { Stay } from '../lib/stay'
+import heroImage from '../assets/img/hero.svg'
+import { siteConfig } from '../data/siteConfig'
 import { BookingBar } from './BookingBar'
 import { Icon } from './Icon'
-
-interface HeroProps {
-  stay: Stay
-  onStayChange: (stay: Stay) => void
-}
 
 const pill =
   'inline-flex items-center gap-1 rounded-full px-4 py-1 text-overline font-bold uppercase tracking-[0.1em] shadow-soft backdrop-blur-md'
 
-export function Hero({ stay, onStayChange }: HeroProps) {
+const { locality, region, province } = siteConfig.location
+
+const highlights = [
+  { icon: 'bakery_dining', title: 'Desayuno Salteño', text: 'Panes y dulces de cayote' },
+  // TODO(confirmar): el subtítulo lo escribimos a partir de «ambiente familiar»; sin datos concretos.
+  { icon: 'family_home', title: 'Ambiente familiar', text: 'Calidez de hogar' },
+]
+
+export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-title" className="relative w-full overflow-hidden bg-sand">
+    <section id="inicio" aria-labelledby="hero-title" className="relative w-full overflow-hidden bg-sand">
       <div className="relative flex min-h-[92vh] w-full items-end overflow-hidden pt-36 pb-12 lg:pb-16">
         <img src={heroImage} alt="" className="absolute inset-0 h-full w-full scale-105 object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-canvas from-10% via-canvas/75 via-50% to-black/20" />
@@ -23,11 +26,7 @@ export function Hero({ stay, onStayChange }: HeroProps) {
           <div className="flex flex-wrap items-center gap-2">
             <span className={`${pill} bg-sand/90 text-primary`}>
               <Icon name="explore" className="!text-[16px] text-secondary" />
-              Valles Calchaquíes · Salta, Argentina
-            </span>
-            <span className={`${pill} bg-white/90 text-ink`}>
-              <Icon name="star" className="!text-[16px] text-secondary" />
-              Calificación 4.98 · Superhost Airbnb
+              {locality} · {region}, {province}
             </span>
           </div>
 
@@ -38,28 +37,31 @@ export function Hero({ stay, onStayChange }: HeroProps) {
             >
               El Refugio Auténtico de los Valles Calchaquíes
             </h1>
+            {/* TODO(confirmar): adobe centenario, muros encalados, cielorrasos de cardón, viñedos de altura. */}
             <p className="max-w-2xl text-lead text-ink">
-              Una estancia boutique de adobe centenario, muros encalados y cielorrasos de cardón.
-              Entre viñedos de altura, silencios de montaña y el fuego encendido al caer la tarde.
+              Una hostería de adobe centenario, muros encalados y cielorrasos de cardón. Entre viñedos de altura,
+              silencios de montaña y el fuego encendido al caer la tarde.
             </p>
           </div>
 
-          <BookingBar stay={stay} onChange={onStayChange} />
+          <BookingBar />
         </div>
       </div>
 
       <div className="w-full bg-sand py-4">
-        <ul className="container-site grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {highlights.map((h) => (
-            <li key={h.title} className="flex items-center gap-3 p-1">
-              <Icon name={h.icon} className="!text-[26px] text-secondary" />
-              <div className="flex flex-col">
-                <span className="text-[16px] font-semibold text-ink">{h.title}</span>
-                <span className="text-small text-ink-soft">{h.text}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="container-site">
+          <ul className="mx-auto grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
+            {highlights.map((h) => (
+              <li key={h.title} className="flex items-center gap-3 p-1 sm:justify-center">
+                <Icon name={h.icon} className="!text-[26px] text-secondary" />
+                <div className="flex flex-col">
+                  <span className="text-[16px] font-semibold text-ink">{h.title}</span>
+                  <span className="text-small text-ink-soft">{h.text}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   )

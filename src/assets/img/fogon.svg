@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagen de ejemplo: Fogón bajo las estrellas">
-<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1a2e"/><stop offset="1" stop-color="#4a2a35"/></linearGradient></defs>
-<rect width="1600" height="1000" fill="url(#s)"/>
-<circle cx="1200" cy="220" r="60" fill="#f7d9a0" opacity="0.85"/>
-<polygon points="0,1000 0,715 178,719 356,678 533,651 711,620 889,700 1067,676 1244,711 1422,665 1600,712 1600,1000" fill="#2a1c26" opacity="0.95"/><polygon points="0,1000 0,782 200,824 400,818 600,793 800,803 1000,815 1200,775 1400,804 1600,824 1600,1000" fill="#150f18" opacity="1.0"/></svg>

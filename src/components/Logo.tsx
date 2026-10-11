@@ -1,18 +1,32 @@
-export function Logo({ className = 'h-9 w-9' }: { className?: string }) {
+import { siteConfig } from '../data/siteConfig'
+
+/**
+ * Si existe un archivo `src/assets/logo.(svg|png|webp|jpg)` se usa como logo;
+ * si no, se muestra el nombre en texto. Para cambiarlo alcanza con dejar el archivo ahí.
+ */
+const logoFiles = import.meta.glob<string>('../assets/logo.{svg,png,webp,jpg,jpeg}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
+const logoUrl = Object.values(logoFiles)[0]
+
+interface LogoProps {
+  /** Descriptor bajo el nombre (solo en la versión de texto). */
+  kicker?: string
+  className?: string
+}
+
+export function Logo({ kicker, className = '' }: LogoProps) {
+  if (logoUrl) {
+    return <img src={logoUrl} alt={siteConfig.name} className={`h-10 w-auto ${className}`} />
+  }
   return (
-    <svg viewBox="0 0 40 40" className={className} fill="none" aria-hidden="true">
-      <path
-        d="M7 36V17C7 9.8 12.8 4 20 4s13 5.8 13 13v19"
-        stroke="#7b1e2b"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12 22c2.5-2.2 4.5-2.2 7 0s4.5 2.2 7 0 4.5-2.2 6-.8M12 28c2.5-2.2 4.5-2.2 7 0s4.5 2.2 7 0 4.5-2.2 6-.8"
-        stroke="#c86d51"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
+    <span className={`flex min-w-0 flex-col ${className}`}>
+      <span className="font-display text-base leading-tight font-semibold tracking-tight text-primary sm:text-card">
+        {siteConfig.name}
+      </span>
+      {kicker && <span className="kicker hidden text-secondary-deep sm:block">{kicker}</span>}
+    </span>
   )
 }

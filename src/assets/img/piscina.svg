@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagen de ejemplo: Piscina entre cardones">
-<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fb7c4"/><stop offset="1" stop-color="#e8dcc8"/></linearGradient></defs>
-<rect width="1600" height="1000" fill="url(#s)"/>
-<circle cx="1300" cy="250" r="100" fill="#fff4d8" opacity="0.85"/>
-<polygon points="0,1000 0,577 178,594 356,601 533,622 711,594 889,619 1067,494 1244,555 1422,622 1600,581 1600,1000" fill="#b97a5a" opacity="0.85"/><polygon points="0,1000 0,740 200,661 400,697 600,675 800,704 1000,707 1200,651 1400,672 1600,678 1600,1000" fill="#8d5a45" opacity="1.0"/><polygon points="0,1000 0,845 267,836 533,800 800,838 1067,798 1333,827 1600,798 1600,1000" fill="#5c8a8f" opacity="1.0"/></svg>

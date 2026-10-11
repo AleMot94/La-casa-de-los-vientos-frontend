@@ -1,13 +1,9 @@
-import type { FormEvent } from 'react'
-import { guestOptions, rooms, wholeHouseOption } from '../data/site'
+import { useState, type FormEvent } from 'react'
+import { rooms, TOTAL_CAPACITY } from '../data/rooms'
 import { addDays, fromISO, toISO, today } from '../lib/dates'
-import type { Stay } from '../lib/stay'
 import { Icon } from './Icon'
 
-interface BookingBarProps {
-  stay: Stay
-  onChange: (stay: Stay) => void
-}
+// Versión provisoria: la validación y el envío por WhatsApp llegan en la etapa del formulario del hero.
 
 const field =
   'h-12 w-full cursor-pointer rounded-lg border border-mortar bg-canvas px-4 text-[15px] font-semibold text-ink transition focus:border-primary focus:ring-4 focus:ring-primary/15 focus:outline-none'
@@ -21,14 +17,18 @@ function Label({ htmlFor, icon, children }: { htmlFor: string; icon: string; chi
   )
 }
 
-export function BookingBar({ stay, onChange }: BookingBarProps) {
+export function BookingBar() {
+  const [checkIn, setCheckIn] = useState(() => toISO(addDays(today(), 14)))
+  const [checkOut, setCheckOut] = useState(() => toISO(addDays(today(), 18)))
+  const [guests, setGuests] = useState('2')
+  const [room, setRoom] = useState('todas')
+
   const minIn = toISO(today())
 
-  const setCheckIn = (value: string) => {
+  const changeCheckIn = (value: string) => {
     if (!value) return
-    const next = { ...stay, checkIn: value }
-    if (!stay.checkOut || stay.checkOut <= value) next.checkOut = toISO(addDays(fromISO(value), 1))
-    onChange(next)
+    setCheckIn(value)
+    if (!checkOut || checkOut <= value) setCheckOut(toISO(addDays(fromISO(value), 1)))
   }
 
   const onSubmit = (e: FormEvent) => {
@@ -49,8 +49,8 @@ export function BookingBar({ stay, onChange }: BookingBarProps) {
           type="date"
           className={field}
           min={minIn}
-          value={stay.checkIn}
-          onChange={(e) => setCheckIn(e.target.value)}
+          value={checkIn}
+          onChange={(e) => changeCheckIn(e.target.value)}
           required
         />
       </div>
@@ -60,38 +60,33 @@ export function BookingBar({ stay, onChange }: BookingBarProps) {
           id="check-out"
           type="date"
           className={field}
-          min={stay.checkIn ? toISO(addDays(fromISO(stay.checkIn), 1)) : minIn}
-          value={stay.checkOut}
-          onChange={(e) => e.target.value && onChange({ ...stay, checkOut: e.target.value })}
+          min={checkIn ? toISO(addDays(fromISO(checkIn), 1)) : minIn}
+          value={checkOut}
+          onChange={(e) => e.target.value && setCheckOut(e.target.value)}
           required
         />
       </div>
       <div className="flex flex-col gap-1">
         <Label htmlFor="guests" icon="group">Huéspedes</Label>
-        <select
+        <input
           id="guests"
+          type="number"
+          inputMode="numeric"
           className={field}
-          value={stay.guests}
-          onChange={(e) => onChange({ ...stay, guests: Number(e.target.value) })}
-        >
-          {guestOptions.map((o) => (
-            <option key={o.value} value={o.value}>{o.label}</option>
-          ))}
-        </select>
+          min={1}
+          max={TOTAL_CAPACITY}
+          value={guests}
+          onChange={(e) => setGuests(e.target.value)}
+          required
+        />
       </div>
       <div className="flex flex-col gap-1">
         <Label htmlFor="suite" icon="bed">Habitación</Label>
-        <select
-          id="suite"
-          className={field}
-          value={stay.room}
-          onChange={(e) => onChange({ ...stay, room: e.target.value as Stay['room'] })}
-        >
+        <select id="suite" className={field} value={room} onChange={(e) => setRoom(e.target.value)}>
           <option value="todas">Cualquiera disponible</option>
           {rooms.map((r) => (
             <option key={r.id} value={r.id}>{r.name}</option>
           ))}
-          <option value="casona">{wholeHouseOption}</option>
         </select>
       </div>
       <button
