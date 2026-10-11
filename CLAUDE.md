@@ -32,16 +32,16 @@ React + Vite + TypeScript + Tailwind CSS (v4, plugin `@tailwindcss/vite`). Tests
 - Referencia en `contexto/`: `DESIGN_desktop.md` (sistema "Calchaquí Luxury Heritage"), `code_*.html` y `mockup-*.jpeg`. No es código de producción.
 - Secciones, en este orden: hero (con barra de consulta y 2 highlights), Conocenos, Habitaciones (7), Instalaciones (4), Contacto; footer. Navbar: logo (→ `#inicio`) y 4 enlaces, sin botón de acción.
 - Sin precios, sin calendario de disponibilidad, sin reseñas inventadas.
-- Fotos: el componente `Photo` muestra un placeholder con la proporción exacta hasta que existan las reales (ids en `src/data/*`, p. ej. `rooms/01-sonqoy/01`).
+- Fotos: **las sirve el backend** (lo hace el usuario después); el frontend no genera tamaños (sin `sharp` ni script de imágenes). Llegan como datos `PhotoData` (`src/api/contract.ts`: id, tamaño real y archivos AVIF/WebP/JPEG por ancho) en `src/data/photos.ts`, hoy **vacío**: mientras no estén, `Photo` muestra un placeholder con la proporción exacta. Los ids están en `src/data/*` (p. ej. `rooms/01-sonqoy/01`; la hero es `hero`, Conocenos `about/01`).
 - Logo: si existe `src/assets/logo.(svg|png|webp|jpg)` se usa solo; si no, se muestra el nombre en texto.
 
 ## Estructura de `src/`
 - `App.tsx`: arma la página.
-- `components/`: una sección por archivo (`Header`, `Hero` + `BookingBar`, `About`, `Rooms`, `Facilities`, `Contact`, `Footer`) más `LanguageSelect`, `Photo`, `Icon`, `Logo`, `SectionHeading`.
+- `components/`: una sección por archivo (`Header`, `Hero` + `BookingBar`, `About`, `Rooms`, `Facilities`, `Contact`, `Footer`) más `LanguageSelect`, `Photo` (+ `PhotoPlaceholder`), `PhotoGallery` (carrusel `scroll-snap`; pide cada foto recién cuando se acerca), `Icon`, `Logo`, `SectionHeading`.
 - `i18n/`: `es.ts` (claves y textos, fuente de verdad), `en.ts`, `fr.ts`, `pt-BR.ts`; `translations.ts` (ensambla y exporta `LANGS`), `translate.ts` (`makeT`: reemplaza `{variables}`), `format.ts` (camas, capacidad y fecha larga con `Intl`), `detect.ts` (idioma inicial), `I18nProvider.tsx` + `useI18n.ts` (`const { t, lang, setLang, describeBeds, describeCapacity, formatDate } = useI18n()`).
 - `api/contract.ts`: **solo tipos y constantes** del contrato con el backend futuro.
-- `data/`: `siteConfig.ts` (datos del negocio), `rooms.ts`, `facilities.ts`, `platforms.ts` (documentos, módulos puros importables desde Node), `nav.ts`, `photoIds.ts`. Tests en `data.test.ts`.
-- `lib/`: `dates.ts` (fechas locales y `YYYY-MM-DD`), `whatsapp.ts`.
+- `data/`: `siteConfig.ts` (datos del negocio), `rooms.ts`, `facilities.ts`, `platforms.ts` (documentos, módulos puros importables desde Node), `nav.ts`, `photoIds.ts`, `photos.ts` (registro de fotos por id + `getPhoto`; cuando exista el backend se carga desde su API). Tests en `data.test.ts`.
+- `lib/`: `dates.ts` (fechas locales y `YYYY-MM-DD`), `photo.ts` (`srcset`, archivo de respaldo), `whatsapp.ts`.
 - `assets/img/hero.svg`: único SVG que queda (placeholder del hero).
 
 ## Notas técnicas
@@ -51,4 +51,7 @@ React + Vite + TypeScript + Tailwind CSS (v4, plugin `@tailwindcss/vite`). Tests
 - Fechas del contrato como texto `YYYY-MM-DD`, nunca `Date` (`new Date('2026-12-15')` es medianoche UTC y en Argentina da el 14).
 - Íconos: Material Symbols (Google Fonts, ver `index.html`) vía `<Icon name="..." />`.
 - No usar `overline` como nombre de clase propia: choca con la utilidad de Tailwind. La del sistema se llama `kicker`.
+- `Photo` no define su propia posición: la hero le pasa `absolute inset-0`. Si el contenedor tuviera `relative` propio, chocaría con esa clase y la foto dejaría de cubrir el hero (pasó y se corrigió).
+- `loading="lazy"` no alcanza en un carrusel horizontal: las slides vecinas quedan cerca del viewport. `PhotoGallery` pide la foto 1 con carga diferida y las demás con un `IntersectionObserver` (cuando asoman al deslizar) o al acercar el puntero/foco.
+- Para ver fotos reales sin commitear datos falsos: copiar el proyecto a una carpeta temporal, rellenar `photos.ts` con datos de prueba y servir las imágenes desde un servidor local.
 - Firefox no baja de ~500 px de ventana: para verificar 360/390 px se carga la página en un iframe del ancho exacto.

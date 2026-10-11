@@ -1,7 +1,10 @@
 import { facilities } from '../data/facilities'
 import { useI18n } from '../i18n/useI18n'
-import { Photo } from './Photo'
+import { PhotoGallery } from './PhotoGallery'
 import { SectionHeading } from './SectionHeading'
+
+// Cuánto ocupa la foto en pantalla: una columna hasta 1023 px y media fila (máx. ~592 px) desde ahí.
+const FACILITY_SIZES = '(min-width: 1024px) 592px, (min-width: 768px) calc(100vw - 4rem), calc(100vw - 2.5rem)'
 
 export function Facilities() {
   const { t } = useI18n()
@@ -30,10 +33,11 @@ export function Facilities() {
                   <h3 className="font-display text-headline-sm text-primary">{title}</h3>
                   <p className="max-w-lg text-body text-ink-soft">{t(`facility.${facility.id}.text`)}</p>
                 </div>
-                <Photo
-                  id={facility.photos[0]}
-                  alt={t('photo.alt', { name: title, n: 1 })}
+                <PhotoGallery
+                  ids={facility.photos}
+                  name={title}
                   ratio="3/2"
+                  sizes={FACILITY_SIZES}
                   className="rounded-xl shadow-float"
                 />
               </li>

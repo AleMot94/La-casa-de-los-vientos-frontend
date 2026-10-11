@@ -63,6 +63,10 @@ export const fr: Translation = {
   'capacity.one': '{count} personne',
   'capacity.other': '{count} personnes',
   'photo.alt': '{name}, photo {n}',
+  'gallery.label': 'Photos de {name}',
+  'gallery.prev': 'Photo précédente',
+  'gallery.next': 'Photo suivante',
+  'gallery.counter': '{current} sur {total}',
 
   'facilities.overline': 'Espaces de Repos & Nature',
   'facilities.title': 'Des installations pensées pour se reconnecter',

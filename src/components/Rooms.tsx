@@ -1,8 +1,14 @@
 import { roomCapacity, rooms, TOTAL_CAPACITY } from '../data/rooms'
 import { useI18n } from '../i18n/useI18n'
 import { Icon } from './Icon'
-import { Photo } from './Photo'
+import { PhotoGallery } from './PhotoGallery'
 import { SectionHeading } from './SectionHeading'
+
+// Cuánto ocupa la foto en pantalla (ancho CSS). El navegador lo cruza con la densidad de la pantalla
+// para elegir el archivo: contenedor de 1.25 rem de margen en celular, 2 rem desde 768 px y grilla de
+// 2 columnas (768–1279) o 3 (desde 1280, máximo ~395 px). La tarjeta ancha ocupa la mitad de la fila.
+const CARD_SIZES = '(min-width: 1280px) 395px, (min-width: 768px) calc((100vw - 5.5rem) / 2), calc(100vw - 2.5rem)'
+const WIDE_SIZES = '(min-width: 1280px) 616px, (min-width: 768px) calc((100vw - 4rem) / 2), calc(100vw - 2.5rem)'
 
 export function Rooms() {
   const { t, describeBeds, describeCapacity } = useI18n()
@@ -31,7 +37,12 @@ export function Rooms() {
                 }`}
               >
                 <div className={wide ? 'md:w-1/2' : ''}>
-                  <Photo id={room.photos[0]} alt={t('photo.alt', { name: room.name, n: 1 })} ratio="4/3" />
+                  <PhotoGallery
+                    ids={room.photos}
+                    name={room.name}
+                    ratio="4/3"
+                    sizes={wide ? WIDE_SIZES : CARD_SIZES}
+                  />
                 </div>
                 <div className={`flex flex-col gap-3 p-6 ${wide ? 'md:w-1/2 md:justify-center md:p-10' : ''}`}>
                   <span className="kicker text-secondary-deep">{t('rooms.number', { number: room.number })}</span>

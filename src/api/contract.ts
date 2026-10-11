@@ -63,6 +63,39 @@ export interface Platform {
   reviewCount?: number
 }
 
+// ── Fotos ───────────────────────────────────────────────────────────────────
+// Las fotos las guarda, procesa y sirve el backend. El frontend solo las muestra.
+
+/** Un archivo de imagen de un ancho concreto (la misma foto, en varios tamaños). */
+export interface PhotoFile {
+  url: string
+  /** Ancho real del archivo en píxeles (es el `480w` del `srcset`). */
+  width: number
+}
+
+/**
+ * Una foto lista para mostrar, tal como la devuelve el backend.
+ *
+ * Recomendaciones para generar los archivos:
+ * - Anchos: 480, 800 y 1200 px para tarjetas y galerías; 640, 960, 1280, 1600 y 1920 px para la foto
+ *   `hero` (ocupa todo el ancho). El navegador elige el menor que cubra «ancho en pantalla × densidad».
+ * - Formatos: AVIF y WebP (el `<img>` de respaldo usa WebP; si no hay, JPEG).
+ * - Quitar los metadatos (incluido el GPS) y respetar la rotación EXIF de los celulares.
+ * - Los HEIC de iPhone no los leen la mayoría de las librerías: exportarlos a JPG antes.
+ */
+export interface PhotoData {
+  /** El mismo id que usan `Room.photos` y `Facility.photos`, ej. `rooms/01-sonqoy/01`. */
+  id: string
+  /** Tamaño real del original, para reservar el lugar de la imagen sin saltos de layout. */
+  width: number
+  height: number
+  files: {
+    avif?: PhotoFile[]
+    webp?: PhotoFile[]
+    jpeg?: PhotoFile[]
+  }
+}
+
 // ── Disponibilidad ──────────────────────────────────────────────────────────
 
 export interface RoomStatus {

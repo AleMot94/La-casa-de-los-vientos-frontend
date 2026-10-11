@@ -3,6 +3,7 @@ import { siteConfig } from '../data/siteConfig'
 import { useI18n } from '../i18n/useI18n'
 import { BookingBar } from './BookingBar'
 import { Icon } from './Icon'
+import { Photo } from './Photo'
 
 const pill =
   'inline-flex items-center gap-1 rounded-full px-4 py-1 text-overline font-bold uppercase tracking-[0.1em] shadow-soft backdrop-blur-md'
@@ -20,7 +21,15 @@ export function Hero() {
   return (
     <section id="inicio" aria-labelledby="hero-title" className="relative w-full overflow-hidden bg-sand">
       <div className="relative flex min-h-[92vh] w-full items-end overflow-hidden pt-36 pb-12 lg:pb-16">
-        <img src={heroImage} alt="" className="absolute inset-0 h-full w-full scale-105 object-cover" />
+        {/* Foto `hero` del backend; mientras no exista, el SVG de ejemplo. Es la imagen principal: se pide ya. */}
+        <Photo
+          id="hero"
+          alt=""
+          priority
+          sizes="100vw"
+          fallbackSrc={heroImage}
+          className="absolute inset-0 h-full w-full scale-105"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-canvas from-10% via-canvas/75 via-50% to-black/20" />
         <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
 

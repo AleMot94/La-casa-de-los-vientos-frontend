@@ -63,6 +63,10 @@ export const ptBR: Translation = {
   'capacity.one': '{count} pessoa',
   'capacity.other': '{count} pessoas',
   'photo.alt': '{name}, foto {n}',
+  'gallery.label': 'Fotos de {name}',
+  'gallery.prev': 'Foto anterior',
+  'gallery.next': 'Próxima foto',
+  'gallery.counter': '{current} de {total}',
 
   'facilities.overline': 'Espaços de Descanso & Natureza',
   'facilities.title': 'Instalações pensadas para se reconectar',

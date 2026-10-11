@@ -5,6 +5,9 @@ import { Icon } from './Icon'
 import { Photo } from './Photo'
 import { SectionHeading } from './SectionHeading'
 
+// Cuánto ocupa la foto en pantalla: ancho de la columna (5 de 12) desde 1024 px, todo el ancho antes.
+const ABOUT_SIZES = '(min-width: 1024px) 476px, calc(100vw - 2.5rem)'
+
 export function About() {
   const { t } = useI18n()
 
@@ -53,7 +56,7 @@ export function About() {
 
         <div className="relative flex flex-col gap-4 lg:col-span-5">
           <div className="relative overflow-hidden rounded-xl shadow-float">
-            <Photo id="about/01" alt={siteConfig.name} ratio="4/5" />
+            <Photo id="about/01" alt={siteConfig.name} ratio="4/5" sizes={ABOUT_SIZES} />
             <div className="absolute inset-x-4 bottom-10 flex items-center justify-between rounded-lg bg-white/90 p-4 shadow-soft backdrop-blur-md">
               <div>
                 <h3 className="font-sans text-[16px] font-semibold text-primary">{t('about.caption.title')}</h3>

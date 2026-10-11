@@ -77,6 +77,10 @@ export const es = {
   'capacity.one': '{count} persona',
   'capacity.other': '{count} personas',
   'photo.alt': '{name}, foto {n}',
+  'gallery.label': 'Fotos de {name}',
+  'gallery.prev': 'Foto anterior',
+  'gallery.next': 'Foto siguiente',
+  'gallery.counter': '{current} de {total}',
 
   // ── Instalaciones ─────────────────────────────────────────────────────────
   'facilities.overline': 'Espacios de Descanso & Naturaleza',
