@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagen de ejemplo: Valles Calchaquíes">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9a77f"/><stop offset="1" stop-color="#f6dcc0"/></linearGradient></defs>
+<rect width="1600" height="1000" fill="url(#s)"/>
+<circle cx="1180" cy="330" r="130" fill="#fff0d6" opacity="0.85"/>
+<polygon points="0,1000 0,494 178,623 356,607 533,516 711,559 889,551 1067,587 1244,612 1422,487 1600,475 1600,1000" fill="#b4614a" opacity="0.9"/><polygon points="0,1000 0,707 145,651 291,697 436,590 582,652 727,691 873,622 1018,722 1164,716 1309,594 1455,594 1600,666 1600,1000" fill="#8e3b36" opacity="1.0"/><polygon points="0,1000 0,833 200,766 400,746 600,771 800,723 1000,747 1200,773 1400,779 1600,748 1600,1000" fill="#6b2530" opacity="1.0"/><polygon points="0,1000 0,878 229,878 457,897 686,883 914,862 1143,927 1371,905 1600,911 1600,1000" fill="#4a1a22" opacity="1.0"/></svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagen de ejemplo: Junior Suite Quebrada Colorada">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d36a52"/><stop offset="1" stop-color="#f1b98f"/></linearGradient></defs>
+<rect width="1600" height="1000" fill="url(#s)"/>
+<circle cx="900" cy="330" r="100" fill="#ffe6b8" opacity="0.85"/>
+<polygon points="0,1000 0,517 200,483 400,519 600,429 800,575 1000,578 1200,537 1400,418 1600,505 1600,1000" fill="#9a3b2d" opacity="0.9"/><polygon points="0,1000 0,619 200,605 400,732 600,739 800,568 1000,715 1200,669 1400,629 1600,611 1600,1000" fill="#74241f" opacity="1.0"/><polygon points="0,1000 0,817 229,796 457,819 686,816 914,763 1143,827 1371,848 1600,847 1600,1000" fill="#44161a" opacity="1.0"/></svg>

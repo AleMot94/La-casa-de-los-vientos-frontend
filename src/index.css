@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --color-primary: #7b1e2b;
+  --color-primary-deep: #58111a;
+  --color-secondary: #c86d51;
+  --color-secondary-deep: #97472e;
+  --color-tertiary: #5c6b50;
+  --color-canvas: #faf7f2;
+  --color-sand: #f4ebe1;
+  --color-mortar: #ece2d4;
+  --color-ink: #2b2625;
+  --color-ink-soft: #5e5350;
+  --color-blush: #ffdbd0;
+  --color-sage: #dde6d2;
+
+  --text-display: 3.5rem;
+  --text-display--line-height: 4rem;
+  --text-display--letter-spacing: -0.02em;
+  --text-display-sm: 2.25rem;
+  --text-display-sm--line-height: 2.75rem;
+  --text-display-sm--letter-spacing: -0.01em;
+  --text-headline: 2.5rem;
+  --text-headline--line-height: 3rem;
+  --text-headline--letter-spacing: -0.01em;
+  --text-headline-sm: 1.75rem;
+  --text-headline-sm--line-height: 2.25rem;
+  --text-card: 1.375rem;
+  --text-card--line-height: 1.875rem;
+  --text-card--font-weight: 600;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.75rem;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.5rem;
+  --text-small: 0.8125rem;
+  --text-small--line-height: 1.25rem;
+  --text-label: 0.875rem;
+  --text-label--line-height: 1.25rem;
+  --text-label--letter-spacing: 0.04em;
+  --text-label--font-weight: 600;
+  --text-overline: 0.6875rem;
+  --text-overline--line-height: 1rem;
+  --text-overline--letter-spacing: 0.1em;
+  --text-overline--font-weight: 700;
+
+  --shadow-soft: 0 4px 12px -2px rgba(123, 30, 43, 0.04), 0 2px 6px -2px rgba(43, 38, 37, 0.06);
+  --shadow-float: 0 16px 32px -8px rgba(43, 38, 37, 0.12), 0 4px 12px -2px rgba(123, 30, 43, 0.06);
+}
+
+@utility container-site {
+  max-width: 85rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (min-width: 48rem) {
+    padding-inline: 2rem;
+  }
+  @media (min-width: 80rem) {
+    padding-inline: 4rem;
+  }
+}
+
+@utility kicker {
+  font-size: var(--text-overline);
+  line-height: var(--text-overline--line-height);
+  letter-spacing: var(--text-overline--letter-spacing);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+  ::selection {
+    background-color: #ffdada;
+    color: #40000c;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+dialog::backdrop {
+  background: rgba(43, 38, 37, 0.6);
+  backdrop-filter: blur(4px);
+}

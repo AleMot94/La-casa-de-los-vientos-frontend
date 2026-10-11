@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagen de ejemplo: Master Suite Los Vientos">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0916f"/><stop offset="1" stop-color="#f7d7b5"/></linearGradient></defs>
+<rect width="1600" height="1000" fill="url(#s)"/>
+<circle cx="1250" cy="300" r="120" fill="#fff0d0" opacity="0.85"/>
+<polygon points="0,1000 0,485 178,632 356,465 533,581 711,457 889,489 1067,640 1244,482 1422,568 1600,532 1600,1000" fill="#a8503f" opacity="0.9"/><polygon points="0,1000 0,673 200,679 400,637 600,726 800,623 1000,643 1200,613 1400,647 1600,667 1600,1000" fill="#7b1e2b" opacity="1.0"/><polygon points="0,1000 0,852 229,810 457,789 686,801 914,859 1143,785 1371,830 1600,810 1600,1000" fill="#3e1620" opacity="1.0"/></svg>

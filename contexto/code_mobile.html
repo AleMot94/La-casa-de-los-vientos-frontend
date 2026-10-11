@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed":"#40000c","on-secondary-fixed-variant":"#793019","on-primary-container":"#ff8c93","on-surface":"#1f1b1a","inverse-surface":"#352f2e","surface-container-high":"#f0e6e4","background":"#fff8f6","tertiary":"#212f18","surface-variant":"#eae0de","on-error-container":"#93000a","outline":"#897172","surface-container-lowest":"#ffffff","surface-container":"#f6ecea","on-error":"#ffffff","primary":"#5c0417","on-tertiary":"#ffffff","surface-dim":"#e2d8d6","error":"#ba1a1a","secondary":"#97472e","tertiary-fixed":"#d7e8c6","surface-bright":"#fff8f6","secondary-container":"#fe997a","inverse-primary":"#ffb3b5","secondary-fixed-dim":"#ffb59f","tertiary-container":"#37452d","outline-variant":"#dcc0c0","primary-container":"#7b1e2b","surface-container-highest":"#eae0de","surface-container-low":"#fcf1ef","surface":"#fff8f6","tertiary-fixed-dim":"#bbccac","on-tertiary-container":"#a2b293","surface-tint":"#a23b46","inverse-on-surface":"#f9eeec","on-secondary-fixed":"#3a0a00","on-background":"#1f1b1a","on-secondary":"#ffffff","on-tertiary-fixed-variant":"#3d4b32","primary-fixed":"#ffdada","error-container":"#ffdad6","on-primary":"#ffffff","on-secondary-container":"#772f18","on-primary-fixed-variant":"#822430","primary-fixed-dim":"#ffb3b5","on-surface-variant":"#564242","on-tertiary-fixed":"#121f0a","secondary-fixed":"#ffdbd0"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xs":"0.25rem","space-2xl":"4rem","space-3xl":"6rem","gutter-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem",margin:"4rem","space-xl":"2.5rem","margin-mobile":"1.25rem","space-lg":"1.5rem",gutter:"1.5rem","margin-tablet":"2rem"},fontFamily:{"title-lg":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-lg":["Playfair Display"],"headline-md":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"label-lg":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg":["Playfair Display"],"label-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"display-lg-mobile":["Playfair Display"]},fontSize:{"title-lg":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",fontWeight:"600"}],"display-lg":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"400"}],"headline-md":["28px",{lineHeight:"36px",fontWeight:"500"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-sm":["22px",{lineHeight:"30px",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.01em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.1em",fontWeight:"700"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"display-lg-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 md:h-20 max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs sm:gap-space-sm shrink-0"><img alt="Logo La Casa de los Vientos" class="h-7 sm:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQw6hVhU9sDO01YO-0jhv-6CZkuV40FXVJYembwACH_cbjYjid0eGcQlGZ9N8ZFAEiAcMYr7BQ54BRZpH2ZkvA1kS3Uk632KZdptmYazE3EtbjOWWavbPWhcMcmZ5iTDEooKNLJhkDg8FePWzCfgOG4F5J_iDoSc-AlLhskNK4PUZzB7qlxuSVw6lYQ2IG5HPnbMiPqaY0T6_Yz9CptDl8Bci-8xEa2pT94_tELjye_36q_TaPzJ_bA"/><div class="flex flex-col"><span class="font-headline-sm text-[16px] sm:text-headline-sm text-primary tracking-tight font-bold">La Casa de los Vientos</span><span class="font-label-sm text-[10px] sm:text-label-sm text-secondary uppercase tracking-wider">Hostería Boutique · Salta</span></div></div><nav class="hidden xl:flex items-center gap-space-lg"><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface px-space-xs py-space-xs transition-colors" href="#la-hosteria">La Hostería</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface px-space-xs py-space-xs transition-colors" href="#instalaciones">Instalaciones</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface px-space-xs py-space-xs transition-colors" href="#habitaciones">Habitaciones &amp; Reservas</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface px-space-xs py-space-xs transition-colors" href="#airbnb-resenas">Airbnb &amp; Reseñas</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface px-space-xs py-space-xs transition-colors" href="#contacto">Contacto</a></nav><div class="flex items-center gap-space-xs sm:gap-space-sm shrink-0"><div class="flex items-center bg-surface-container rounded-full px-space-xs sm:px-space-sm py-0.5 gap-1 font-label-sm text-[11px]"><span class="text-primary font-bold px-1">ES</span><span class="text-outline">|</span><a class="text-on-surface-variant hover:text-on-surface px-1 transition-colors" href="#">EN</a><span class="text-outline">|</span><a class="text-on-surface-variant hover:text-on-surface px-1 transition-colors" href="#">PT</a></div><a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-sm sm:font-label-lg text-[12px] sm:text-label-lg px-space-sm sm:px-space-md py-1.5 sm:py-space-sm rounded-lg hover:bg-primary transition-colors shadow-sm" href="#habitaciones"><span class="material-symbols-outlined text-[16px] mr-1">calendar_today</span><span class="hidden sm:inline">Consultar Disponibilidad</span><span class="sm:hidden">Reservar</span></a><a class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center shrink-0 text-primary" href="#contacto"><span class="material-symbols-outlined text-[18px]">support_agent</span></a></div></div></header><main class="w-full pt-16 md:pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION -->
+<section class="relative w-full -mt-16 md:-mt-20 overflow-hidden bg-surface-container-high">
+<div class="relative w-full min-h-[640px] md:min-h-[880px] flex items-end pb-space-lg md:pb-space-2xl pt-28 md:pt-36">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 scale-105" data-alt="Exquisite historic colonial adobe estancia in Salta Argentina surrounded by multicolored Calchaqui mountain peaks at golden hour sunset, terracotta tile roofs, vibrant magenta bougainvillea draped along white stone verandas, rustic wooden chairs with patterned Andean textiles, outdoor wrought iron lanterns, and breathtaking Andean sky." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5aVZzUIxckoaQiQN7Jhv8PjyCtkuRlSZAziY0S8uMwWhU0pdLAvahRoYCLpDktHzA3ceizYTXY348FQNjmuOmm84uId-J9lWCDEwPwX9z1Bg7zkTc-medqOTsMs5quZJ1uVvAc0LZpcFosoLPPcnIHarkM6cmmrMPnexV-xwKdXD7J1R2xrBkSVBsH_VGpDmIcKJ2LhaX0m-z4IhrbVSCezxq2QMeEKN91dufMK28heAAbR4qEUS_Ww')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-black/30"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<!-- Hero Content Container -->
+<div class="relative z-10 max-w-[1360px] w-full mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex flex-col gap-space-md md:gap-space-lg">
+<!-- Region Pill & Superhost Pill -->
+<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm">
+<span class="inline-flex items-center gap-space-xs px-space-sm sm:px-space-md py-1 rounded-full bg-surface-container/90 backdrop-blur-md text-primary font-label-sm text-[11px] sm:text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">explore</span>
+            VALLES CALCHAQUÍES · SALTA
+          </span>
+<span class="inline-flex items-center gap-space-xs px-space-sm sm:px-space-md py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] sm:text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">star</span>
+            CALIFICACIÓN 4.98 · SUPERHOST AIRBNB
+          </span>
+</div>
+<!-- Headline & Editorial Narrative -->
+<div class="max-w-4xl flex flex-col gap-space-xs sm:gap-space-sm">
+<h1 class="font-display-lg text-[32px] sm:text-[44px] md:text-display-lg text-primary tracking-tight leading-[1.12]">
+            El Refugio Auténtico en La Casa de los Vientos
+          </h1>
+<p class="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-on-surface max-w-2xl leading-relaxed">
+            Una estancia boutique de adobe centenario, muros encalados y cielorrasos de cardón. Entre viñedos de altura, silencios de montaña y el fuego encendido al caer la tarde.
+          </p>
+</div>
+<!-- Mobile-optimized Availability Booking Bar -->
+<div class="w-full bg-surface-container-lowest/95 backdrop-blur-xl rounded-xl shadow-xl p-space-sm sm:p-space-md md:p-space-lg mt-space-xs sm:mt-space-sm">
+<form class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm sm:gap-space-md items-end" onsubmit="event.preventDefault(); window.scrollToBooking();">
+<!-- Check In -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-[11px] sm:text-label-sm text-on-surface-variant flex items-center gap-1" for="check-in-date">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+                LLEGADA
+              </label>
+<input class="w-full h-11 sm:h-12 bg-surface-container-low px-space-sm sm:px-space-md rounded-lg font-title-md text-[14px] sm:text-title-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all cursor-pointer" id="check-in-date" type="date" value="2025-04-12"/>
+</div>
+<!-- Check Out -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-[11px] sm:text-label-sm text-on-surface-variant flex items-center gap-1" for="check-out-date">
+<span class="material-symbols-outlined text-[16px] text-secondary">event</span>
+                SALIDA
+              </label>
+<input class="w-full h-11 sm:h-12 bg-surface-container-low px-space-sm sm:px-space-md rounded-lg font-title-md text-[14px] sm:text-title-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all cursor-pointer" id="check-out-date" type="date" value="2025-04-16"/>
+</div>
+<!-- Huéspedes -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-[11px] sm:text-label-sm text-on-surface-variant flex items-center gap-1" for="guests-select">
+<span class="material-symbols-outlined text-[16px] text-secondary">group</span>
+                HUÉSPEDES
+              </label>
+<select class="w-full h-11 sm:h-12 bg-surface-container-low px-space-sm sm:px-space-md rounded-lg font-title-md text-[14px] sm:text-title-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all cursor-pointer" id="guests-select">
+<option value="2">2 Adultos (Ideal)</option>
+<option value="1">1 Adulto</option>
+<option value="3">3 Adultos</option>
+<option value="4">4 Huéspedes (Suite Familiar)</option>
+</select>
+</div>
+<!-- Habitación -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-[11px] sm:text-label-sm text-on-surface-variant flex items-center gap-1" for="suite-type">
+<span class="material-symbols-outlined text-[16px] text-secondary">bed</span>
+                HABITACIÓN
+              </label>
+<select class="w-full h-11 sm:h-12 bg-surface-container-low px-space-sm sm:px-space-md rounded-lg font-title-md text-[14px] sm:text-title-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all cursor-pointer" id="suite-type">
+<option value="todas">Cualquiera disponible</option>
+<option value="real">Master Suite Los Vientos</option>
+<option value="cardones">Suite Colonial Los Cardones</option>
+<option value="quebrada">Junior Suite Quebrada Colorada</option>
+</select>
+</div>
+<!-- Action CTA -->
+<div class="w-full sm:col-span-2 lg:col-span-1">
+<a class="w-full h-11 sm:h-12 inline-flex items-center justify-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300" href="#habitaciones">
+<span class="material-symbols-outlined text-[20px]">search</span>
+                Ver Disponibilidad
+              </a>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Highlights Ticker Strip Below Hero -->
+<div class="w-full bg-surface-container py-space-sm sm:py-space-md border-t border-outline-variant/30">
+<div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-sm sm:gap-space-md">
+<div class="flex items-center gap-space-xs sm:gap-space-sm p-space-xs bg-surface-container-low sm:bg-transparent rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[22px] sm:text-[26px]">workspace_premium</span>
+<div class="flex flex-col">
+<span class="font-title-md text-[14px] sm:text-title-md text-on-surface">4.98 Superhost</span>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant">Preferido en Airbnb Salta</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs sm:gap-space-sm p-space-xs bg-surface-container-low sm:bg-transparent rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[22px] sm:text-[26px]">wine_bar</span>
+<div class="flex flex-col">
+<span class="font-title-md text-[14px] sm:text-title-md text-on-surface">Vinos de Altura</span>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant">Degustación de bienvenida</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs sm:gap-space-sm p-space-xs bg-surface-container-low sm:bg-transparent rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[22px] sm:text-[26px]">landscape</span>
+<div class="flex flex-col">
+<span class="font-title-md text-[14px] sm:text-title-md text-on-surface">Vistas al Nevado</span>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant">Quebrada sin contaminación</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs sm:gap-space-sm p-space-xs bg-surface-container-low sm:bg-transparent rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[22px] sm:text-[26px]">bakery_dining</span>
+<div class="flex flex-col">
+<span class="font-title-md text-[14px] sm:text-title-md text-on-surface">Desayuno Salteño</span>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant">Panes y dulces de cayote</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. SOBRE LA HOSTERÍA & ESENCIA SALTEÑA -->
+<section class="w-full py-space-xl sm:py-space-3xl bg-surface" id="la-hosteria">
+<div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg sm:gap-space-2xl items-center">
+<!-- Left: Editorial Storytelling & Historical Details -->
+<div class="lg:col-span-7 flex flex-col gap-space-md sm:gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Patrimonio Calchaquí &amp; Raigambre</span>
+<h2 class="font-headline-lg text-[26px] sm:text-[34px] md:text-headline-lg text-primary tracking-tight leading-snug">
+              Donde el viento del cerro susurra la historia de la casona
+            </h2>
+</div>
+<div class="space-y-space-sm sm:space-y-space-md text-on-surface font-body-md sm:font-body-lg text-body-md sm:text-body-lg leading-relaxed">
+<p>
+              Emplazada sobre un antiguo sendero arriero que unía los valles con la puna, <strong>La Casa de los Vientos</strong> conserva la arquitectura sobria y térmica del adobe amasado con paja de las vegas altas. Su emblema rinde tributo a la histórica veleta de hierro forjado que desde el siglo XIX orientaba a los caminantes según los caprichos del viento zonda.
+            </p>
+<p class="font-body-sm sm:font-body-md text-body-sm sm:text-body-md text-on-surface-variant">
+              Cada rincón ha sido intervenido con respeto patrimonial: tirantes macizos de cardón rescatados, pisos cocidos a horno de leña, mantas tejidas en telar criollo por artesanos de Seclantás y una quietud ininterrumpida que solo el Norte Argentino puede brindar.
+            </p>
+</div>
+<!-- Andean Loom Motifs & Mini Stats Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm sm:gap-space-md pt-space-xs">
+<div class="bg-surface-container-low p-space-sm sm:p-space-md rounded-xl flex flex-col gap-space-xs shadow-sm">
+<span class="font-display-lg text-[32px] sm:text-[38px] leading-tight text-primary font-normal">1.700<span class="text-secondary text-headline-sm">m</span></span>
+<span class="font-title-md text-[15px] sm:text-title-md text-on-surface">Altitud Andina</span>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant">Clima seco y noches diáfanas</span>
+</div>
+<div class="bg-surface-container-low p-space-sm sm:p-space-md rounded-xl flex flex-col gap-space-xs shadow-sm">
+<span class="font-display-lg text-[32px] sm:text-[38px] leading-tight text-primary font-normal">6</span>
+<span class="font-title-md text-[15px] sm:text-title-md text-on-surface">Suites Exclusivas</span>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant">Privacidad absoluta y descanso</span>
+</div>
+<div class="bg-surface-container-low p-space-sm sm:p-space-md rounded-xl flex flex-col gap-space-xs shadow-sm">
+<span class="font-display-lg text-[32px] sm:text-[38px] leading-tight text-secondary font-normal">100<span class="text-primary text-headline-sm">%</span></span>
+<span class="font-title-md text-[15px] sm:text-title-md text-on-surface">Calidez Familiar</span>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant">Hospitalidad y concierge local</span>
+</div>
+</div>
+<!-- Quotes / Signature Tag -->
+<div class="flex items-center gap-space-sm sm:gap-space-md p-space-sm sm:p-space-md bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary text-[28px] sm:text-[32px] shrink-0">format_quote</span>
+<p class="font-body-sm text-body-sm text-on-surface italic">
+              "La Casa de los Vientos no es un hotel de paso; es una pausa sagrada entre las formaciones rojizas de la quebrada y el perfume dulce del Torrontés."
+            </p>
+</div>
+</div>
+<!-- Right: Layered Visual Composition -->
+<div class="lg:col-span-5 relative flex flex-col gap-space-sm sm:gap-space-md">
+<div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Intimate sunlit courtyard of colonial Argentine estancia, handcrafted adobe walls, stone urns with desert cacti, rustic wooden archway opening up to dramatic red sandstone Calchaqui cliffs under golden light, warm earth tones, deep red ceramics, serene silence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsm1YnTZ6-Dm2CLDAVoVTmdiJUXLNZgICzFhFhRpuf6zFxu9Qy6QTQvxRPDhLP6c2mY8_7GBXmezUgMfeoM9RlOV5CdL1x11b17_uzN4lKbqhMRds3hhLU_r13bMG9Bs1ypPSlYWWmS0rY5mu5Kli64zSMX-Cx51FzYTmJKJSbtwYMIP1A8GWJLIOTn1pGh-4v98ptoe0ap-Msy6UmSOMinMgZz9WHVmqhE-ijqLjv5Q3ImWflbteeSA"/>
+<div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-surface-container-lowest/90 backdrop-blur-md p-space-sm sm:p-space-md rounded-xl shadow-md">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-title-md text-[14px] sm:text-title-md text-primary">Patio de los Jazmines</h4>
+<p class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant">Lugar del té andino y lectura al atardecer</p>
+</div>
+<span class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px] sm:text-[20px]">local_cafe</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Secondary Overlapping Pill Detail -->
+<div class="bg-primary text-on-primary p-space-sm sm:p-space-md rounded-xl shadow-lg flex items-center justify-between -mt-4 sm:-mt-6 mx-2 sm:mx-4 relative z-10">
+<div class="flex items-center gap-space-xs sm:gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px] sm:text-[24px]">verified_user</span>
+<span class="font-label-sm sm:font-label-lg text-[12px] sm:text-label-lg">Construcción ecológica de barro cocido</span>
+</div>
+<span class="font-label-sm text-[10px] sm:text-label-sm text-secondary-fixed uppercase tracking-wider">Eco-Boutique</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. GALERÍA DE INSTALACIONES (The Grounds & Amenities) -->
+<section class="w-full py-space-xl sm:py-space-3xl bg-surface-container-low" id="instalaciones">
+<div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex flex-col gap-space-lg sm:gap-space-xl">
+<!-- Section Header with Filter Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm sm:gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Espacios de Descanso &amp; Naturaleza</span>
+<h2 class="font-headline-lg text-[26px] sm:text-[34px] md:text-headline-lg text-primary tracking-tight leading-snug">
+            Instalaciones pensadas para reconectar
+          </h2>
+<p class="font-body-sm sm:font-body-md text-on-surface-variant">
+            Desde galerías sombreadas con buganvilias hasta nuestra cava soterrada donde maduran las mejores añadas de los valles.
+          </p>
+</div>
+<!-- Filter Buttons (Horizontally Scrollable on Mobile) -->
+<div class="flex gap-space-xs p-1 bg-surface-container rounded-lg overflow-x-auto w-full md:w-auto shrink-0" id="gallery-filter-buttons">
+<button class="gallery-tab-btn active px-space-sm sm:px-space-md py-1.5 rounded-lg font-label-sm text-[12px] sm:text-label-sm bg-primary text-on-primary transition-all whitespace-nowrap shrink-0" onclick="window.filterGallery('todos', this)">
+            Todas las áreas
+          </button>
+<button class="gallery-tab-btn px-space-sm sm:px-space-md py-1.5 rounded-lg font-label-sm text-[12px] sm:text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all whitespace-nowrap shrink-0" onclick="window.filterGallery('exteriores', this)">
+            Exteriores &amp; Vistas
+          </button>
+<button class="gallery-tab-btn px-space-sm sm:px-space-md py-1.5 rounded-lg font-label-sm text-[12px] sm:text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all whitespace-nowrap shrink-0" onclick="window.filterGallery('comunes', this)">
+            Espacios Comunes
+          </button>
+<button class="gallery-tab-btn px-space-sm sm:px-space-md py-1.5 rounded-lg font-label-sm text-[12px] sm:text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all whitespace-nowrap shrink-0" onclick="window.filterGallery('cava', this)">
+            Gastronomía &amp; Cava
+          </button>
+</div>
+</div>
+<!-- Responsive Facilities Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm sm:gap-space-md">
+<!-- Item 1: Galería Principal y Vistas -->
+<div class="gallery-item exteriores md:col-span-7 group relative rounded-2xl overflow-hidden shadow-md min-h-[300px] sm:min-h-[360px] bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Sweeping panorama of colonial veranda terrace with rustic pergolas overlooking deep red Calchaqui gorge mountains in Salta Argentina, vibrant magenta bougainvillea on white stucco, terracotta flower pots, outdoor lounge area bathed in warm late afternoon sun." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDD2PyI4gQw8wazhdEYYGJe3bkX870h46__eHdcukiGWvhWffhokX25eapA5s0KIDTH93Lc3NjdzrflBEy3lDrk_MW8Xu5jGgTDxvcSbpdOu_Y0h7Foy-5fqINho6m2CXysIia0yApTdMEjF4-aDzWJ2LyWLVXZQD04z-1DMHArxbWzkYLFduZVM1PjX2DfHE_vF98SnXTqvY9BMRydG2kWzeYGI3Fgn4syoWeiiHSLw7oPqRdzk-pECw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="relative z-10 h-full p-space-md sm:p-space-lg flex flex-col justify-end text-on-primary">
+<span class="inline-flex items-center gap-1 font-label-sm text-[11px] sm:text-label-sm text-secondary-fixed uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[15px]">wb_sunny</span> Terraza Panorámica
+            </span>
+<h3 class="font-headline-sm text-[18px] sm:text-headline-sm text-on-primary font-normal">Galería Colonial &amp; Mirador de los Cerros</h3>
+<p class="font-body-sm text-[13px] sm:text-body-sm text-on-secondary/80 max-w-lg mt-1">
+              Espacio sombreado por vigas de quebracho con vista ininterrumpida a las formaciones sedimentarias milenarias.
+            </p>
+</div>
+</div>
+<!-- Item 2: Cava Subterránea -->
+<div class="gallery-item cava md:col-span-5 group relative rounded-2xl overflow-hidden shadow-md min-h-[300px] sm:min-h-[360px] bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Atmospheric underground wine cellar in Salta Argentina estancia, lit by warm amber wall sconces, stacked French oak barrels, rustic wooden tasting table with Torrontes and Malbec wine bottles and glasses, exposed stone and adobe walls." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9MUenP3kreO0iWo1VxT1cpXctW4UmPlRrD5NZr-qbT4qfhKPrEncYGo_-dvF73xy98woTOxYZ6lNQL3KxgViJJ9-nLaQWvIw_qcCY2x7qhDjncRt6bsitrBVY5L-GV5IQgk3Bk_gAqRbnARVF1a9dZAdEFETXkLiR3ZRoszk3iObsbIYpDt_r_mKUcCzYg_KOs1ptwVxU3yG1jwLR6l0Fdsanuw-GpWBfeXgr4toKYJRWA0YrZH1Dqg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+<div class="relative z-10 h-full p-space-md sm:p-space-lg flex flex-col justify-end text-on-primary">
+<span class="inline-flex items-center gap-1 font-label-sm text-[11px] sm:text-label-sm text-secondary-fixed uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[15px]">wine_bar</span> Bodega Propia
+            </span>
+<h3 class="font-headline-sm text-[18px] sm:text-headline-sm text-on-primary font-normal">La Cava de Altura</h3>
+<p class="font-body-sm text-[13px] sm:text-body-sm text-on-secondary/80 mt-1">
+              Etiquetas seleccionadas de Cafayate, Molinos y Cachi a temperatura natural de bodega subterránea.
+            </p>
+</div>
+</div>
+<!-- Item 3: Piscina sinfín -->
+<div class="gallery-item exteriores md:col-span-4 group relative rounded-2xl overflow-hidden shadow-md min-h-[260px] sm:min-h-[320px] bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Luxury infinity swimming pool nestled amidst giant cardon cactus and boutique vineyards in Salta Argentina, turquoise clear water reflecting the arid Andean sky, loungers with terracotta cushions and stone coping." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDS86PLmySFhv6mCCvattfKbqXWuwKByXfThpBzR9_k_n6unhFOiN3Fv-JBmz-GeMgtN5stDrHldBHcr3zAm6GD0LT69htHIY1q9mJmf7TlH4GEFEVlEgQZnNMikd7Kl_6Oe5uPBpGd_AeKRI3jl4FEYjKO958u7MkrzWczMfYGeOxzP8_KGCzYyKFZyBL15omht_cQrv0kn25zNlnmcYZIOxnut2xOswvx5y8GcoxLCJghPKFWoKf-w')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="relative z-10 h-full p-space-sm sm:p-space-md flex flex-col justify-end text-on-primary">
+<span class="font-label-sm text-[11px] sm:text-label-sm text-secondary-fixed uppercase tracking-wider mb-1">Relax Solar</span>
+<h3 class="font-title-lg text-[16px] sm:text-title-lg text-on-primary font-semibold">Piscina entre Cardones</h3>
+<p class="font-body-sm text-[12px] sm:text-body-sm text-on-secondary/80 mt-1">
+              Agua templada con sol de montaña los 360 días del año.
+            </p>
+</div>
+</div>
+<!-- Item 4: Fogón Criollo -->
+<div class="gallery-item comunes md:col-span-4 group relative rounded-2xl overflow-hidden shadow-md min-h-[260px] sm:min-h-[320px] bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Cozy open-air stone fire pit at dusk in Northern Argentina, glowing wood embers crackling, surrounded by comfortable rustic wooden chairs draped with woven llama wool blankets under a star-filled Andean night sky." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJ_i7s01Uksr3nSdzDH6nv9Rx0PH1bDqZ_TsCFrLNJSzKGDMyvzQiM3mi6vvrstFbEQ1NcwsxWRAAH5O-by5-2bgE3f2n6-_LdFr_Dbhxa0xcOs58L57uYKzxeGsrCro3tRbGwwSEFt_9KfRb611_L2V8M2mCGMC3p7V826mHpyu3bCEak3nfTG8sdA_YCnmfghkx6I-kdpzX5ptNBiKzA1bMx4WGznGOzWnbi2Z8ra2o6nvJfJWm8cQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="relative z-10 h-full p-space-sm sm:p-space-md flex flex-col justify-end text-on-primary">
+<span class="font-label-sm text-[11px] sm:text-label-sm text-secondary-fixed uppercase tracking-wider mb-1">Noches Calchaquíes</span>
+<h3 class="font-title-lg text-[16px] sm:text-title-lg text-on-primary font-semibold">Fogón Bajo las Estrellas</h3>
+<p class="font-body-sm text-[12px] sm:text-body-sm text-on-secondary/80 mt-1">
+              Encuentros vespertinos al calor de la leña con copas de vino.
+            </p>
+</div>
+</div>
+<!-- Item 5: Biblioteca & Salón de Té -->
+<div class="gallery-item comunes md:col-span-4 group relative rounded-2xl overflow-hidden shadow-md min-h-[260px] sm:min-h-[320px] bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Elegant colonial living room library in Salta Argentina with roaring stone fireplace, rich leather armchairs, woven barracan carpets, antique wooden bookshelves filled with books on Andean flora and Argentine history, warm diffused lamp lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFxluRsMZEtdhRukxtKb4l1RZG5gvOQKoXKAuQg6AzOfNWM0k_JQMLc-D143InjR5KpEn4OSvLoCyjedkTHdNcoORCcDMz0twe3Zh_iF6qs83wO5hTOTmZ6W_8QPit8xzOKsDj_DWv7dBIS6TXtNghUc-OKD4qmGICQsjXh_zLcNQWO7M_sIJuOpQ9Zf3GKRw13e7VzM5X3kkkq8GpJgAby9LI_8CV180rLJon9kPRCZFSvWcIhyT-zg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="relative z-10 h-full p-space-sm sm:p-space-md flex flex-col justify-end text-on-primary">
+<span class="font-label-sm text-[11px] sm:text-label-sm text-secondary-fixed uppercase tracking-wider mb-1">Refugio Interior</span>
+<h3 class="font-title-lg text-[16px] sm:text-title-lg text-on-primary font-semibold">Biblioteca &amp; Hogar a Leña</h3>
+<p class="font-body-sm text-[12px] sm:text-body-sm text-on-secondary/80 mt-1">
+              El rincón ideal para mañanas frescas o lecturas al cobijo del fuego.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. SECCIÓN DETALLADA DE HABITACIONES -->
+<section class="w-full py-space-xl sm:py-space-3xl bg-surface" id="habitaciones">
+<div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex flex-col gap-space-lg sm:gap-space-2xl">
+<!-- Section Title & Reassurance Badge -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm sm:gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Habitaciones &amp; Suites Coloniales</span>
+<h2 class="font-headline-lg text-[26px] sm:text-[34px] md:text-headline-lg text-primary tracking-tight leading-snug">
+            Descanso profundo en sintonía con la tierra
+          </h2>
+<p class="font-body-sm sm:font-body-md text-on-surface-variant">
+            Sin pasarela de pago obligatoria: consulte fechas en el calendario interactivo y confirme directamente con nuestro Concierge para obtener la <strong>mejor tarifa garantizada</strong>.
+          </p>
+</div>
+<div class="inline-flex items-center gap-space-xs sm:gap-space-sm px-space-sm sm:px-space-md py-2 bg-surface-container rounded-lg shrink-0 w-fit">
+<span class="material-symbols-outlined text-primary text-[18px] sm:text-[20px]">lock_reset</span>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface">Reserva directa · Sin comisiones ocultas</span>
+</div>
+</div>
+<!-- ROOM 1: Master Suite Los Vientos (Featured Luxury Card) -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-lg overflow-hidden flex flex-col lg:flex-row items-stretch">
+<div class="lg:w-7/12 relative min-h-[280px] sm:min-h-[380px] lg:min-h-full">
+<img class="w-full h-full object-cover" data-alt="Luxury master colonial suite bedroom in Salta Argentina with large arched window framing dramatic red clay mountains at sunset, roaring rustic fireplace, king bed dressed in fine white linens with handcrafted wine red and terracotta geometric Andean woven throw, cardon wood beamed ceiling, warm ambient lamplight, leather reading chair." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHHg6tqNS48FlUYSjlCB1rnwQAxuANCfvSy7D-AMiH3JsBQOdPDmpa2WlvlzJ24KITk7mrpRikFVk-UCwDygKCsiITuNTDvvuKh92SdS-V4P-84WEbUgUyPqoqrPNGnDDlAwm39AlIYX8Vgezweoq8DUUAsPkXoao8QI0GTARrxOD5pFycJ0bWQ9rbVJJfw3ep5LcT76n1kWaHst0zEQ0kZEzMk_X9Sj35p8wMcyZ4Uwkh8r_L8-cAjQ"/>
+<div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-primary text-on-primary font-label-sm text-[11px] sm:text-label-sm px-space-sm sm:px-space-md py-1 rounded-full uppercase tracking-wider shadow">
+            Suite Insignia
+          </div>
+<div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-surface/90 backdrop-blur-md p-space-xs sm:p-space-sm rounded-lg flex items-center justify-between text-[12px] sm:text-body-sm">
+<span class="text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px] sm:text-[18px]">fireplace</span> Hogar en suite
+            </span>
+<span class="text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px] sm:text-[18px]">bathtub</span> Tina en piedra
+            </span>
+</div>
+</div>
+<div class="lg:w-5/12 p-space-sm sm:p-space-lg flex flex-col justify-between gap-space-md sm:gap-space-lg bg-surface-container-low">
+<div class="flex flex-col gap-space-xs sm:gap-space-sm">
+<div class="flex items-baseline justify-between gap-2">
+<h3 class="font-headline-sm text-[20px] sm:text-headline-sm text-primary">Master Suite Los Vientos</h3>
+<div class="text-right shrink-0">
+<span class="font-title-lg text-[18px] sm:text-title-lg text-primary font-bold">USD $110</span>
+<span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface-variant block">/ noche con desayuno</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Nuestra habitación más espaciosa, con ventanal ojival mirando a los cerros colorados, cama King Size vestida con lino puro y mantas de alpaca, estufa a leña privada y living íntimo.
+            </p>
+<!-- Amenities Chips -->
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">Cama King 2.00m</span>
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">Balcón Privado</span>
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">Wi-Fi Starlink</span>
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">Cava Frigobar</span>
+</div>
+<!-- Mini Interactive Calendar UI for Room 1 -->
+<div class="mt-space-xs sm:mt-space-sm p-space-xs sm:p-space-sm bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-1 sm:pb-2 text-on-surface">
+<span class="font-label-sm sm:font-label-lg text-label-sm sm:text-label-lg font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] sm:text-[18px] text-secondary">date_range</span> Abril 2025
+                </span>
+<div class="flex items-center gap-2 text-[11px] sm:text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Libre</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary/40"></span> Ocupado</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center font-label-sm text-[11px] sm:text-label-sm py-1">
+<span class="text-on-surface-variant">L</span>
+<span class="text-on-surface-variant">M</span>
+<span class="text-on-surface-variant">X</span>
+<span class="text-on-surface-variant">J</span>
+<span class="text-on-surface-variant">V</span>
+<span class="text-on-surface-variant">S</span>
+<span class="text-on-surface-variant">D</span>
+<span class="py-1 text-outline cursor-not-allowed">7</span>
+<span class="py-1 text-outline cursor-not-allowed">8</span>
+<span class="py-1 text-outline cursor-not-allowed">9</span>
+<span class="py-1 text-outline cursor-not-allowed">10</span>
+<span class="py-1 text-outline cursor-not-allowed">11</span>
+<button class="py-1 rounded bg-primary text-on-primary font-bold hover:opacity-90" onclick="window.selectDateRange(12, 16, 'Master Suite Los Vientos')">12</button>
+<button class="py-1 rounded bg-primary-container text-on-primary font-bold" onclick="window.selectDateRange(12, 16, 'Master Suite Los Vientos')">13</button>
+<button class="py-1 rounded bg-primary-container text-on-primary font-bold" onclick="window.selectDateRange(12, 16, 'Master Suite Los Vientos')">14</button>
+<button class="py-1 rounded bg-primary-container text-on-primary font-bold" onclick="window.selectDateRange(12, 16, 'Master Suite Los Vientos')">15</button>
+<button class="py-1 rounded bg-primary text-on-primary font-bold" onclick="window.selectDateRange(12, 16, 'Master Suite Los Vientos')">16</button>
+<span class="py-1 text-outline line-through cursor-not-allowed">17</span>
+<span class="py-1 text-outline line-through cursor-not-allowed">18</span>
+<span class="py-1 text-tertiary hover:bg-tertiary-fixed rounded cursor-pointer">19</span>
+<span class="py-1 text-tertiary hover:bg-tertiary-fixed rounded cursor-pointer">20</span>
+</div>
+<p class="font-label-sm text-[10px] sm:text-[11px] text-on-surface-variant text-center pt-1">Rango sugerido: 12 al 16 de Abril (4 noches)</p>
+</div>
+</div>
+<button class="w-full py-space-sm bg-primary hover:bg-primary-container text-on-primary font-label-sm sm:font-label-lg text-label-sm sm:text-label-lg rounded-lg shadow transition-all flex items-center justify-center gap-space-xs" onclick="window.openBookingModal('Master Suite Los Vientos', '12 Abr 2025', '16 Abr 2025', '$110 USD')">
+<span class="material-symbols-outlined text-[18px]">send</span>
+            Solicitar Reserva para Suite Los Vientos
+          </button>
+</div>
+</div>
+<!-- ROOM 2 & ROOM 3 -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md sm:gap-space-xl">
+<!-- ROOM 2: Suite Colonial Los Cardones -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden flex flex-col justify-between">
+<div class="relative aspect-[16/10] bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Traditional colonial twin bedroom in Salta Argentina with two carved dark wood single beds, ornate hand-woven Andean diamond pattern fabric headboards, sunlight streaming through wooden shutters onto terracotta tiled floors with vintage tribal rug, warm whitewashed adobe walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnE6avNkLKvaHbfSQP8jnNgIfeiDaB8MYcYxL9fqe2asE_hSG0jZbYjOCijPbMcOei22E4x7Gl7KRczXOufQz8cXyOgksuucj4g4alMOHOXT3xobbAWlbmc_IZv6lzrBT6LEo78atEEyOJqqOh9JHpIfmoiqXoAgid8p7oS1K-Qf0SkTKJvgy8TiuipjmXTpUMr6MzEETOEZ-xyOUftZG3ebeRAGG3E-JtAZOcMuW2jidWktPXSgMXYg"/>
+<div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-secondary text-on-secondary font-label-sm text-[11px] sm:text-label-sm px-space-sm sm:px-space-md py-1 rounded-full uppercase tracking-wider shadow">
+              Twin o King Convertible
+            </div>
+</div>
+<div class="p-space-sm sm:p-space-lg flex flex-col gap-space-sm sm:gap-space-md flex-grow justify-between">
+<div class="flex flex-col gap-space-xs sm:gap-space-sm">
+<div class="flex items-baseline justify-between gap-2">
+<h3 class="font-headline-sm text-[18px] sm:text-headline-sm text-primary">Suite Colonial Los Cardones</h3>
+<div class="text-right shrink-0">
+<span class="font-title-lg text-[16px] sm:text-title-lg text-primary font-bold">USD $85</span>
+<span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface-variant block">/ noche</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Dos camas twin individuales de algarrobo macizo o unificables a King Size. Cabeceros artesanales en tapiz salteño, vistas hacia el viñedo y baño privado en piedra pórfido.
+              </p>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">2 Twin / 1 King</span>
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">Vista a Viñedos</span>
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">Baño de Piedra</span>
+</div>
+</div>
+<div class="p-space-xs sm:p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between text-[12px] sm:text-body-sm">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] sm:text-[20px]">calendar_today</span>
+<span class="font-semibold">Disponibilidad este mes</span>
+</div>
+<span class="font-label-sm text-[11px] sm:text-label-sm text-tertiary font-bold bg-tertiary-fixed px-space-xs sm:px-space-sm py-0.5 sm:py-1 rounded">3 fechas libres</span>
+</div>
+<button class="w-full py-space-sm bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-sm sm:font-label-lg text-label-sm sm:text-label-lg rounded-lg transition-colors flex items-center justify-center gap-space-xs" onclick="window.openBookingModal('Suite Colonial Los Cardones', 'Consultar Fechas', 'Flexibles', '$85 USD')">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+              Consultar Suite Cardones
+            </button>
+</div>
+</div>
+<!-- ROOM 3: Junior Suite Quebrada Colorada -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden flex flex-col justify-between">
+<div class="relative aspect-[16/10] bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Intimate boutique bedroom in Northern Argentina with queen size bed overlooking vast red desert canyon, comfortable corner armchair with wool throw, brass reading lamp, ceramic mate gourd and thermos on rustic side table, serene high altitude stillness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9EsNervawqtf4LqCAEfLzO-I-xYUxpGEoXRn45ENhqz3QfsfwkhxUWjuCpjeJJvS7uJhUg0JAqdHxK1HRW8q_JrO7A5fCyhZTDq5WWBnNKcA5RR_hh4u3uOVjxlYc3R-EtqAZy7NiQxTFEC2Bbfc6R3F7i0u0bdgOBlG63t6IYbnG-f6mSsDBjUkv3kPjggYpM02pCpAVBl84772dyggx-fgUtpiwEsveaPi1VfQBRt8OWBoQTm6Hgg"/>
+<div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-tertiary text-on-tertiary font-label-sm text-[11px] sm:text-label-sm px-space-sm sm:px-space-md py-1 rounded-full uppercase tracking-wider shadow">
+              Romántica &amp; Silenciosa
+            </div>
+</div>
+<div class="p-space-sm sm:p-space-lg flex flex-col gap-space-sm sm:gap-space-md flex-grow justify-between">
+<div class="flex flex-col gap-space-xs sm:gap-space-sm">
+<div class="flex items-baseline justify-between gap-2">
+<h3 class="font-headline-sm text-[18px] sm:text-headline-sm text-primary">Junior Suite Quebrada Colorada</h3>
+<div class="text-right shrink-0">
+<span class="font-title-lg text-[16px] sm:text-title-lg text-primary font-bold">USD $95</span>
+<span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface-variant block">/ noche</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Diseñada para parejas que buscan silencio absoluto. Gran ventanal hacia la Quebrada de las Conchas, rincón de lectura con set de yerba mate orgánica salteña y ducha con vista al cerro.
+              </p>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">Cama Queen Size</span>
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">Servicio de Mate</span>
+<span class="px-space-xs sm:px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[11px] sm:text-label-sm">Ducha Escocesa</span>
+</div>
+</div>
+<div class="p-space-xs sm:p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between text-[12px] sm:text-body-sm">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] sm:text-[20px]">calendar_today</span>
+<span class="font-semibold">Fines de semana</span>
+</div>
+<span class="font-label-sm text-[11px] sm:text-label-sm text-tertiary font-bold bg-tertiary-fixed px-space-xs sm:px-space-sm py-0.5 sm:py-1 rounded">Últimos cupos</span>
+</div>
+<button class="w-full py-space-sm bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-sm sm:font-label-lg text-label-sm sm:text-label-lg rounded-lg transition-colors flex items-center justify-center gap-space-xs" onclick="window.openBookingModal('Junior Suite Quebrada Colorada', 'Consultar Fechas', 'Flexibles', '$95 USD')">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+              Consultar Suite Quebrada
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. INTEGRACIÓN AIRBNB & REPUTACIÓN -->
+<section class="w-full py-space-xl sm:py-space-3xl bg-surface-container" id="airbnb-resenas">
+<div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex flex-col gap-space-lg sm:gap-space-2xl">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md sm:p-space-xl shadow-md flex flex-col md:flex-row items-center justify-between gap-space-md sm:gap-space-lg">
+<div class="flex items-center gap-space-sm sm:gap-space-lg w-full md:w-auto">
+<div class="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px] sm:text-[44px]">hotel_class</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-[20px] sm:text-headline-sm text-primary font-bold">4.98</span>
+<div class="flex text-secondary text-[16px] sm:text-[18px]">
+                ★★★★★
+              </div>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant font-medium">(142 eval.)</span>
+</div>
+<h3 class="font-title-lg text-[15px] sm:text-title-lg text-on-surface font-semibold">Superhost Airbnb · Favorito entre Huéspedes</h3>
+<p class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant">Ubicado en el 1% de alojamientos mejor valorados de Salta.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-xs sm:gap-space-md w-full md:w-auto shrink-0">
+<a class="px-space-md sm:px-space-lg py-space-sm bg-primary hover:bg-primary-container text-on-primary font-label-sm sm:font-label-lg text-center rounded-lg transition-colors shadow" href="#contacto">
+            Reservar Directo (Tarifa Preferencial)
+          </a>
+<a class="px-space-md sm:px-space-lg py-space-sm bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm sm:font-label-lg rounded-lg transition-colors flex items-center justify-center gap-1 text-center" href="https://airbnb.com" rel="noopener noreferrer" target="_blank">
+<span>Ver en Airbnb</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md sm:gap-space-lg">
+<!-- Review 1 -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-2xl shadow-sm flex flex-col justify-between gap-space-sm sm:gap-space-md">
+<div class="flex flex-col gap-space-xs sm:gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs sm:gap-space-sm">
+<div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-secondary-container text-on-secondary-container font-title-md flex items-center justify-center font-bold text-[14px]">
+                  MC
+                </div>
+<div class="flex flex-col">
+<span class="font-title-md text-[14px] sm:text-title-md text-on-surface">María Clara &amp; Andrés</span>
+<span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface-variant">Buenos Aires · Hospedados en Feb 2025</span>
+</div>
+</div>
+<span class="font-label-sm text-[12px] sm:text-label-sm text-secondary font-bold">5.0 ★</span>
+</div>
+<p class="font-body-sm sm:font-body-md text-body-sm sm:text-body-md text-on-surface leading-relaxed italic">
+              "Una joya escondida en Salta. El desayuno casero con dulces de cayote y pan de campo recién horneado junto al fuego es inigualable. La vista del atardecer desde la galería de La Casa de los Vientos nos dejó sin palabras."
+            </p>
+</div>
+<div class="pt-space-xs sm:pt-space-sm border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-sm text-[11px] sm:text-label-sm">
+<span>Master Suite Los Vientos</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-tertiary">check_circle</span> Airbnb Verificada</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-2xl shadow-sm flex flex-col justify-between gap-space-sm sm:gap-space-md">
+<div class="flex flex-col gap-space-xs sm:gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs sm:gap-space-sm">
+<div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary-fixed text-on-primary-fixed font-title-md flex items-center justify-center font-bold text-[14px]">
+                  JS
+                </div>
+<div class="flex flex-col">
+<span class="font-title-md text-[14px] sm:text-title-md text-on-surface">Jean-Luc Schmitt</span>
+<span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface-variant">Lyon, Francia · Hospedado en Ene 2025</span>
+</div>
+</div>
+<span class="font-label-sm text-[12px] sm:text-label-sm text-secondary font-bold">5.0 ★</span>
+</div>
+<p class="font-body-sm sm:font-body-md text-body-sm sm:text-body-md text-on-surface leading-relaxed italic">
+              "Hospitalité de dix points. Sentarse en la galería de La Casa de los Vientos mientras la histórica veleta gira suavemente marca el ritmo del valle. Silencio absoluto para dormir y comida criolla sublime."
+            </p>
+</div>
+<div class="pt-space-xs sm:pt-space-sm border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-sm text-[11px] sm:text-label-sm">
+<span>Suite Colonial Los Cardones</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-tertiary">check_circle</span> Airbnb Verificada</span>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-2xl shadow-sm flex flex-col justify-between gap-space-sm sm:gap-space-md">
+<div class="flex flex-col gap-space-xs sm:gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs sm:gap-space-sm">
+<div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-title-md flex items-center justify-center font-bold text-[14px]">
+                  VG
+                </div>
+<div class="flex flex-col">
+<span class="font-title-md text-[14px] sm:text-title-md text-on-surface">Valeria Gorriti</span>
+<span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface-variant">Córdoba · Hospedada en Dic 2024</span>
+</div>
+</div>
+<span class="font-label-sm text-[12px] sm:text-label-sm text-secondary font-bold">5.0 ★</span>
+</div>
+<p class="font-body-sm sm:font-body-md text-body-sm sm:text-body-md text-on-surface leading-relaxed italic">
+              "Llegamos por una noche y cancelamos otros planes para quedarnos tres días más. El cielo nocturno desde el fogón es algo que nunca habíamos experimentado. Los anfitriones te hacen sentir en casa."
+            </p>
+</div>
+<div class="pt-space-xs sm:pt-space-sm border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-sm text-[11px] sm:text-label-sm">
+<span>Junior Suite Quebrada</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-tertiary">check_circle</span> Airbnb Verificada</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. UBICACIÓN, CÓMO LLEGAR & CONTACTO REGIONAL -->
+<section class="w-full py-space-xl sm:py-space-3xl bg-surface" id="contacto">
+<div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex flex-col gap-space-lg sm:gap-space-2xl">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Encuéntrenos en la Ruta 40</span>
+<h2 class="font-headline-lg text-[26px] sm:text-[34px] md:text-headline-lg text-primary tracking-tight leading-snug">
+          Llegar al corazón de la quebrada
+        </h2>
+<p class="font-body-sm sm:font-body-md text-on-surface-variant">
+          Ubicada estratégicamente en el circuito entre Salta Capital, la Cuesta del Obispo, Cachi y las bodegas de Cafayate.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg sm:gap-space-xl">
+<div class="lg:col-span-6 flex flex-col gap-space-md sm:gap-space-lg">
+<!-- Static Map Component -->
+<div class="w-full h-56 sm:h-72 rounded-2xl bg-cover bg-center shadow-md relative overflow-hidden flex flex-col justify-end p-space-sm sm:p-space-md" data-location="Valles Calchaquíes, Salta, Argentina" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAx8EKqiNIEfkuGKK5aUdN6UqV0h381bpdllkgi4sRMpqRrhfLJviS5mO4VNZyLSVOtflXnQsZR3NrvF5_BVt8zFNCgBW_lXbzORpxm8XQbbhqxtjPsBA908u1FVYd-Sk5UpoQqItyIo8G_5YiK0dO6Hsip95g5vgccjxR8WyK-w_D8Ph-FTGQMgMRg6Frer1JmzfEoDcjQe4oIAhb4qgWpv2JNd9n_dinTXV2xHzw9z5nzsJQNaWQ7Iw')">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="relative z-10 text-on-primary flex items-center justify-between">
+<div>
+<span class="font-title-md text-[14px] sm:text-title-md font-bold block">Ruta Nacional 40, Km 4320</span>
+<span class="font-body-sm text-[12px] sm:text-body-sm text-secondary-fixed">A 2h 45m de Salta Capital</span>
+</div>
+<a class="px-space-sm sm:px-space-md py-1 rounded-lg bg-surface/90 text-primary font-label-sm text-[12px] sm:text-label-sm shadow hover:bg-surface" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+                Abrir GPS
+              </a>
+</div>
+</div>
+<!-- Quick Connect Details Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm sm:gap-space-md">
+<a class="p-space-sm sm:p-space-md bg-surface-container rounded-xl hover:bg-surface-container-high transition-colors flex items-start gap-space-sm group" href="https://wa.me/5493874950000?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20La%20Casa%20de%20los%20Vientos" rel="noopener noreferrer" target="_blank">
+<div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase">WhatsApp Concierge 24/7</span>
+<span class="font-title-md text-[14px] sm:text-title-md text-primary font-bold group-hover:underline">+54 9 387 495-0000</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Respuesta inmediata</span>
+</div>
+</a>
+<div class="p-space-sm sm:p-space-md bg-surface-container rounded-xl flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase">Recepción &amp; Casona</span>
+<span class="font-title-md text-[14px] sm:text-title-md text-on-surface font-bold">+54 387 495-1280</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">07:30 a 22:30 hs</span>
+</div>
+</div>
+<div class="p-space-sm sm:p-space-md bg-surface-container rounded-xl flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase">Correo Electrónico</span>
+<span class="font-title-md text-[13px] sm:text-title-md text-on-surface font-semibold truncate">reservas@lacasadelosvientos.com.ar</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Tarifas y estadías</span>
+</div>
+</div>
+<div class="p-space-sm sm:p-space-md bg-surface-container rounded-xl flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">pin_drop</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase">Punto Geográfico</span>
+<span class="font-title-md text-[13px] sm:text-title-md text-on-surface font-semibold">25°58'12" S · 65°55'44" W</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Acceso asfaltado</span>
+</div>
+</div>
+</div>
+<!-- FAQ Mini-Accordion -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<h4 class="font-title-md text-[15px] sm:text-title-md text-primary font-bold">Preguntas Frecuentes</h4>
+<details class="bg-surface-container-low p-space-sm sm:p-space-md rounded-xl cursor-pointer group">
+<summary class="font-title-md text-[14px] sm:text-title-md text-on-surface font-medium flex items-center justify-between list-none">
+<span>¿Cuáles son los horarios de Check-in y Check-out?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-sm text-[13px] sm:text-body-sm text-on-surface-variant pt-2 leading-relaxed">
+                Check-in a partir de las 15:00 hs y check-out hasta las 11:00 hs. Si arriba antes o desea disfrutar nuestras galerías y piscina más tarde, cuidamos su equipaje sin costo.
+              </p>
+</details>
+<details class="bg-surface-container-low p-space-sm sm:p-space-md rounded-xl cursor-pointer group">
+<summary class="font-title-md text-[14px] sm:text-title-md text-on-surface font-medium flex items-center justify-between list-none">
+<span>¿Cómo llegar desde el Aeropuerto de Salta (SLA)?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-sm text-[13px] sm:text-body-sm text-on-surface-variant pt-2 leading-relaxed">
+                El viaje dura 2h 45m transitando por la Ruta Nacional 68 o por la Cuesta del Obispo hacia Cachi. Podemos coordinar chofer privado puerta a puerta.
+              </p>
+</details>
+<details class="bg-surface-container-low p-space-sm sm:p-space-md rounded-xl cursor-pointer group">
+<summary class="font-title-md text-[14px] sm:text-title-md text-on-surface font-medium flex items-center justify-between list-none">
+<span>¿El desayuno está incluido en la estadía?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-sm text-[13px] sm:text-body-sm text-on-surface-variant pt-2 leading-relaxed">
+                Sí, incluye desayuno de campo artesanal: panes recién horneados, dulces caseros de higo y cayote, quesos de cabra e infusiones andinas.
+              </p>
+</details>
+</div>
+</div>
+<!-- Right: Direct Inquiry & Reservation Request Form -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-md sm:p-space-xl rounded-2xl shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-[11px] sm:text-label-sm text-secondary uppercase tracking-widest">Reserva Directa</span>
+<span class="font-label-sm text-[11px] sm:text-label-sm text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded">Atención en menos de 2 hs</span>
+</div>
+<h3 class="font-headline-sm text-[18px] sm:text-headline-sm text-primary mb-space-xs sm:mb-space-sm">
+              Solicitud de Estadía en La Casa de los Vientos
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md sm:mb-space-lg">
+              Bloquee sus fechas con tarifa oficial directa. Nos pondremos en contacto vía WhatsApp o Email para coordinar su llegada.
+            </p>
+<form class="space-y-space-sm sm:space-y-space-md" id="contact-booking-form" onsubmit="window.handleFormSubmit(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm sm:gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-[12px] sm:text-label-sm text-on-surface font-semibold" for="contact-name">Nombre y Apellido</label>
+<input class="w-full h-11 sm:h-12 px-space-md bg-surface-container rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 text-body-sm sm:text-body-md" id="contact-name" placeholder="Ej: Santiago Albarracín" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-[12px] sm:text-label-sm text-on-surface font-semibold" for="contact-whatsapp">Teléfono o WhatsApp</label>
+<input class="w-full h-11 sm:h-12 px-space-md bg-surface-container rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 text-body-sm sm:text-body-md" id="contact-whatsapp" placeholder="+54 9 11 5555-5555" required="" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm sm:gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-[12px] sm:text-label-sm text-on-surface font-semibold" for="contact-email">Correo Electrónico</label>
+<input class="w-full h-11 sm:h-12 px-space-md bg-surface-container rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 text-body-sm sm:text-body-md" id="contact-email" placeholder="nombre@correo.com" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-[12px] sm:text-label-sm text-on-surface font-semibold" for="contact-room">Habitación de Interés</label>
+<select class="w-full h-11 sm:h-12 px-space-md bg-surface-container rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 text-body-sm sm:text-body-md" id="contact-room">
+<option value="Master Suite Los Vientos">Master Suite Los Vientos ($110 USD)</option>
+<option value="Suite Colonial Los Cardones">Suite Colonial Los Cardones ($85 USD)</option>
+<option value="Junior Suite Quebrada Colorada">Junior Suite Quebrada Colorada ($95 USD)</option>
+<option value="Toda la Casona (Exclusiva)">Toda la Casona (Exclusiva 14 huéspedes)</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm sm:gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-[12px] sm:text-label-sm text-on-surface font-semibold" for="contact-checkin">Llegada</label>
+<input class="w-full h-11 sm:h-12 px-space-md bg-surface-container rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 text-body-sm sm:text-body-md" id="contact-checkin" type="date" value="2025-04-12"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-[12px] sm:text-label-sm text-on-surface font-semibold" for="contact-checkout">Salida</label>
+<input class="w-full h-11 sm:h-12 px-space-md bg-surface-container rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 text-body-sm sm:text-body-md" id="contact-checkout" type="date" value="2025-04-16"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-[12px] sm:text-label-sm text-on-surface font-semibold" for="contact-notes">Mensaje o Pedidos Especiales</label>
+<textarea class="w-full p-space-md bg-surface-container rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 text-body-sm sm:text-body-md resize-none" id="contact-notes" placeholder="Indique si viaja con niños, si requiere traslado o si celebra alguna ocasión especial..." rows="3"></textarea>
+</div>
+<button class="w-full h-12 bg-primary hover:bg-primary-container text-on-primary font-label-sm sm:font-label-lg text-label-sm sm:text-label-lg rounded-lg shadow-md transition-all flex items-center justify-center gap-space-xs" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                Enviar Solicitud al Concierge
+              </button>
+</form>
+</div>
+<div class="hidden mt-space-md p-space-md bg-tertiary-fixed text-on-tertiary-fixed rounded-lg text-center" id="booking-success-message">
+<span class="font-title-md font-bold block">¡Solicitud enviada con éxito!</span>
+<span class="font-body-sm">Nos comunicaremos con usted en los próximos minutos vía WhatsApp o correo.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- QUICK BOOKING MODAL -->
+<div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-space-sm sm:p-space-md" id="booking-modal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-2xl shadow-2xl overflow-hidden animate-fade-in">
+<div class="bg-primary text-on-primary p-space-md sm:p-space-lg flex items-center justify-between">
+<div>
+<span class="font-label-sm text-secondary-fixed uppercase text-[11px]">Consulta Directa</span>
+<h3 class="font-headline-sm text-[18px] sm:text-headline-sm font-normal" id="modal-suite-title">Master Suite</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-on-primary" onclick="window.closeBookingModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-md sm:p-space-lg flex flex-col gap-space-md">
+<div class="p-space-sm sm:p-space-md bg-surface-container rounded-xl flex items-center justify-between text-on-surface">
+<div>
+<span class="font-label-sm text-on-surface-variant block text-[11px]">Tarifa por noche</span>
+<span class="font-title-lg text-primary font-bold text-[18px] sm:text-title-lg" id="modal-suite-rate">USD $110</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-on-surface-variant block text-[11px]">Fechas</span>
+<span class="font-title-md text-on-surface font-semibold text-[14px] sm:text-title-md" id="modal-suite-dates">12 - 16 Abr 2025</span>
+</div>
+</div>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">
+          Para confirmación inmediata sin recargos, contáctenos vía WhatsApp directo con el Concierge de La Casa de los Vientos:
+        </p>
+<div class="flex flex-col gap-space-xs sm:gap-space-sm">
+<a class="w-full h-11 sm:h-12 bg-primary hover:bg-primary-container text-on-primary font-label-sm sm:font-label-lg rounded-lg flex items-center justify-center gap-space-xs transition-colors shadow" href="https://wa.me/5493874950000" id="modal-whatsapp-link" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+            Enviar por WhatsApp al Concierge
+          </a>
+<button class="w-full h-11 sm:h-12 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm sm:font-label-lg rounded-lg transition-colors" onclick="window.closeBookingModal(); document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});">
+            Completar formulario web
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- CLIENT-SIDE SCRIPT -->
+<script>
+    window.filterGallery = function(category, btnElement) {
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'todos' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      document.querySelectorAll('#gallery-filter-buttons .gallery-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary');
+        btn.classList.add('text-on-surface-variant');
+      });
+      btnElement.classList.add('bg-primary', 'text-on-primary');
+      btnElement.classList.remove('text-on-surface-variant');
+    };
+
+    window.scrollToBooking = function() {
+      const target = document.getElementById('habitaciones');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    window.openBookingModal = function(suiteName, checkin, checkout, rate) {
+      document.getElementById('modal-suite-title').innerText = suiteName;
+      document.getElementById('modal-suite-rate').innerText = rate;
+      document.getElementById('modal-suite-dates').innerText = checkin + ' - ' + checkout;
+
+      const message = encodeURIComponent(`Hola Concierge de La Casa de los Vientos. Quisiera consultar disponibilidad para la habitación ${suiteName} para las fechas ${checkin} al ${checkout}.`);
+      document.getElementById('modal-whatsapp-link').href = `https://wa.me/5493874950000?text=${message}`;
+
+      const modal = document.getElementById('booking-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    };
+
+    window.closeBookingModal = function() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    };
+
+    window.selectDateRange = function(start, end, suiteName) {
+      window.openBookingModal(suiteName, `${start} Abr`, `${end} Abr`, '$110 USD');
+    };
+
+    window.handleFormSubmit = function(event) {
+      event.preventDefault();
+      const successBox = document.getElementById('booking-success-message');
+      successBox.classList.remove('hidden');
+      setTimeout(() => {
+        alert('Gracias por su solicitud. Nuestro Concierge le responderá a la brevedad con la cotización formal de La Casa de los Vientos.');
+      }, 300);
+    };
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface-variant pt-space-2xl pb-space-xl"><div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg sm:gap-space-xl pb-space-lg sm:pb-space-xl"><div class="flex flex-col gap-space-sm sm:gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-[20px] sm:text-headline-sm text-primary font-bold">La Casa de los Vientos</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Hostería boutique colonial en el corazón de los Valles Calchaquíes. Serenidad, silencio andino y hospitalidad ancestral salteña.</p><div class="inline-flex items-center gap-space-xs sm:gap-space-sm bg-surface-container px-space-sm sm:px-space-md py-space-xs sm:py-space-sm rounded-lg w-fit"><span class="material-symbols-outlined text-secondary text-[20px]">verified</span><div class="flex flex-col"><span class="font-label-sm text-[11px] text-on-surface uppercase">Superhost Airbnb</span><span class="font-body-sm text-[12px] text-secondary">4.98 ★ Calificación de Huéspedes</span></div></div></div><div class="flex flex-col gap-space-xs sm:gap-space-sm"><span class="font-title-md text-title-md text-on-surface font-semibold">Ubicación &amp; Terruño</span><div class="flex items-start gap-space-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">location_on</span><p class="font-body-sm text-body-sm leading-relaxed">Ruta Nacional 40, Km 4320<br/>Valles Calchaquíes, Cafayate / Cachi<br/>Provincia de Salta, Argentina</p></div><div class="flex items-center gap-space-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0">terrain</span><span class="font-body-sm text-body-sm">1.700 m.s.n.m. · Valle Calchaquí</span></div></div><div class="flex flex-col gap-space-xs sm:gap-space-sm"><span class="font-title-md text-title-md text-on-surface font-semibold">Atención &amp; Reservas</span><div class="flex items-center gap-space-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0">schedule</span><span class="font-body-sm text-body-sm">Recepción: 07:30 a 22:30 hs</span></div><a class="inline-flex items-center gap-space-sm text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/5493874950000"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0">chat</span><span class="font-body-sm text-body-sm">WhatsApp Concierge Directo</span></a><a class="inline-flex items-center gap-space-sm text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0">photo_camera</span><span class="font-body-sm text-body-sm">@lacasadelosvientos.salta</span></a><a class="inline-flex items-center gap-space-sm text-on-surface-variant hover:text-primary transition-colors" href="mailto:reservas@lacasadelosvientos.com.ar"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0">mail</span><span class="font-body-sm text-body-sm">reservas@lacasadelosvientos.com.ar</span></a></div><div class="flex flex-col gap-space-xs sm:gap-space-sm"><span class="font-title-md text-title-md text-on-surface font-semibold">Explorar Hostería</span><nav class="flex flex-col gap-space-xs font-body-sm text-body-sm"><a class="hover:text-primary transition-colors" href="#la-hosteria">Historia de la Casona</a><a class="hover:text-primary transition-colors" href="#habitaciones">Suites Coloniales</a><a class="hover:text-primary transition-colors" href="#instalaciones">Cava de Altura &amp; Patios</a><a class="hover:text-primary transition-colors" href="#airbnb-resenas">Libro de Huéspedes</a><a class="hover:text-primary transition-colors" href="#contacto">Cómo Llegar desde Salta Capital</a></nav></div></div><div class="pt-space-md sm:pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm sm:gap-space-md text-on-surface-variant font-label-sm text-[12px] sm:text-label-sm text-center sm:text-left"><p>© 2025 La Casa de los Vientos. Todos los derechos reservados. Valles Calchaquíes, Salta.</p><div class="flex flex-wrap items-center justify-center gap-space-sm sm:gap-space-lg"><a class="hover:text-on-surface transition-colors" href="#">Políticas</a><a class="hover:text-on-surface transition-colors" href="#">Privacidad</a><a class="hover:text-on-surface transition-colors" href="#">Contacto Prensa</a></div></div></div></footer></body></html>
