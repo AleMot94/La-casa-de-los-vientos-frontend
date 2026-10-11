@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { getPhoto } from '../data/photos'
 import { useI18n } from '../i18n/useI18n'
+import { usePhotos } from '../photos/usePhotos'
 import { Icon } from './Icon'
 import { Photo, PhotoPlaceholder, type PhotoRatio } from './Photo'
 
@@ -21,11 +21,14 @@ interface PhotoGalleryProps {
  */
 export function PhotoGallery({ ids, name, ratio, sizes, className = '' }: PhotoGalleryProps) {
   const { t } = useI18n()
+  const { status, getPhoto } = usePhotos()
   const available = ids.filter((id) => getPhoto(id))
   // El número sale de la posición original (la foto 3 sigue siendo «foto 3» aunque falte la 2).
   const alt = (id: string) => t('photo.alt', { name, n: ids.indexOf(id) + 1 })
 
-  if (available.length === 0) return <PhotoPlaceholder id={ids[0]} ratio={ratio} className={className} />
+  if (available.length === 0) {
+    return <PhotoPlaceholder id={ids[0]} ratio={ratio} pulsing={status === 'loading'} className={className} />
+  }
   if (available.length === 1) {
     return <Photo id={available[0]} alt={alt(available[0])} ratio={ratio} sizes={sizes} className={className} />
   }

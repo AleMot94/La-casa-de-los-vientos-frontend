@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { PhotoData } from '../api/contract'
-import { buildSrcSet, fallbackFiles, pickSrc } from './photo'
+import { buildSrcSet, fallbackFiles, indexPhotos, pickSrc } from './photo'
 
 const files = [
   { url: '/x-1200.webp', width: 1200 },
@@ -51,5 +51,25 @@ describe('fallbackFiles', () => {
   it('ignora las listas vacías y devuelve undefined si no hay nada', () => {
     expect(fallbackFiles({ ...base, files: { webp: [], jpeg } })).toBe(jpeg)
     expect(fallbackFiles({ ...base, files: {} })).toBeUndefined()
+  })
+})
+
+describe('indexPhotos', () => {
+  const foto = (id: string, width = 3000): PhotoData => ({ id, width, height: 2000, files: {} })
+
+  it('arma un registro por id', () => {
+    const a = foto('rooms/01-sonqoy/01')
+    const b = foto('hero')
+    expect(indexPhotos([a, b])).toEqual({ 'rooms/01-sonqoy/01': a, hero: b })
+  })
+
+  it('una lista vacía da un registro vacío', () => {
+    expect(indexPhotos([])).toEqual({})
+  })
+
+  it('si un id se repite, gana el último', () => {
+    const vieja = foto('hero', 1000)
+    const nueva = foto('hero', 2000)
+    expect(indexPhotos([vieja, nueva]).hero).toBe(nueva)
   })
 })

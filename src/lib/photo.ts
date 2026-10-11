@@ -25,3 +25,8 @@ export function pickSrc(files: PhotoFile[], minWidth = 800): PhotoFile {
   const sorted = [...files].sort((a, b) => a.width - b.width)
   return sorted.find((file) => file.width >= minWidth) ?? sorted[sorted.length - 1]
 }
+
+/** Lista del backend → registro por id: `[{ id: 'a', … }]` → `{ a: { id: 'a', … } }`. Si un id se repite, gana el último. */
+export function indexPhotos(list: PhotoData[]): Record<string, PhotoData> {
+  return Object.fromEntries(list.map((photo) => [photo.id, photo]))
+}
