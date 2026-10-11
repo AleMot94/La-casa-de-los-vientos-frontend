@@ -2,7 +2,10 @@
  * Contrato entre el front y el backend (que se hace aparte).
  *
  * Acá solo hay TIPOS y CONSTANTES: ningún código de servidor.
- * Ejemplos, colecciones, endpoints y reglas: docs/backend.md.
+ * El backend cubre solo dos cosas: las FOTOS (`GET /api/photos` → `PhotoData[]`, ver `loadPhotos`) y el
+ * CONTACTO (`POST` de un `ContactRequest` → `ContactResponse`). La disponibilidad NO está acá: la manejan
+ * los dueños a mano por WhatsApp y la página nunca la muestra ni la calcula.
+ * El detalle del contrato de contacto está en el README.
  */
 
 export type Lang = 'es' | 'en' | 'fr' | 'pt-BR'
@@ -94,36 +97,6 @@ export interface PhotoData {
     webp?: PhotoFile[]
     jpeg?: PhotoFile[]
   }
-}
-
-// ── Disponibilidad ──────────────────────────────────────────────────────────
-
-export interface RoomStatus {
-  roomId: string
-  /** `false` = la habitación no se ofrece. */
-  enabled: boolean
-}
-
-/**
- * Bloqueo de fechas de una habitación (reserva tomada por otro canal, mantenimiento, etc.).
- * Cubre las NOCHES [from, to): `to` es el día de salida y esa noche queda libre.
- */
-export interface AvailabilityBlock {
-  id: string
-  roomId: string
-  from: ISODate
-  to: ISODate
-  /** Nota interna: solo la ve el administrador. */
-  note?: string
-}
-
-/** Lo que manda el administrador al crear o editar un bloqueo. */
-export type BlockInput = Omit<AvailabilityBlock, 'id'>
-
-/** Respuesta pública de disponibilidad: sin notas ni datos internos. */
-export interface AvailabilityResponse {
-  statuses: RoomStatus[]
-  blocks: Omit<AvailabilityBlock, 'note'>[]
 }
 
 // ── Contacto ────────────────────────────────────────────────────────────────

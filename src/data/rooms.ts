@@ -1,6 +1,6 @@
 /**
  * Las 7 habitaciones, con forma de documento (lo que más adelante puede vivir en una base).
- * Módulo puro: Node lo puede importar sin Vite (ver scripts/export-seed.ts).
+ * Módulo puro: Node lo puede importar sin Vite.
  */
 import type { Room } from '../api/contract'
 import { photoIds } from './photoIds.ts'

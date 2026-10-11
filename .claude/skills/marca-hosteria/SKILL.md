@@ -5,7 +5,7 @@ description: Marca y sistema de diseño de la hostería Casa de los Vientos (Sal
 
 # Marca: La Casa de los Vientos
 
-Hostería boutique colonial en los Valles Calchaquíes, Salta. Sistema "Calchaquí Luxury Heritage": lujo editorial sobrio, adobe encalado, vino tinto, calma de montaña.
+Hostería en los Valles Calchaquíes, Salta (sin adjetivos de marketing). Sistema "Calchaquí Luxury Heritage": lujo editorial sobrio, adobe encalado, vino tinto, calma de montaña.
 Detalle completo en `contexto/DESIGN_desktop.md`; maquetas de referencia en `contexto/code_*.html` y `contexto/mockup-*.jpeg`.
 
 **Nombre**: siempre "La Casa de los Vientos" (el mockup desktop dice "El Gallo de Viento": reemplazar).
@@ -33,7 +33,7 @@ Detalle completo en `contexto/DESIGN_desktop.md`; maquetas de referencia en `con
 - Botón primario: vino sólido, texto crema, 4px. Secundario: borde 1.5px vino. Terciario: link terracota con flecha →.
 - Inputs 48px de alto, fondo `#FAF7F2`, foco con borde vino + halo.
 - Chips: outline cardón para terroir; fill `#ECE2D4` para amenities.
-- Barra de reserva (llegada, salida, huéspedes, habitación) sobre fondo adobe translúcido.
+- Barra de consulta (llegada, salida, huéspedes, habitación) sobre fondo adobe translúcido. Es una consulta por WhatsApp: la página no muestra ni confirma disponibilidad.
 
 ## Tono
 - Español rioplatense, voseo, cálido y sereno. Evocar viento, quebrada, adobe, silencio, vino de altura.

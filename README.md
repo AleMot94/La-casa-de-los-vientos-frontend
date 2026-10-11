@@ -79,10 +79,22 @@ Cualquier otra cosa (un cuerpo que no cumple el contrato, una página de error d
    `OPTIONS` y `Access-Control-Allow-Origin` con el dominio exacto del sitio (no `*`): el `Content-Type: application/json`
    hace que el navegador pregunte antes con un `OPTIONS`.
 
+## Idiomas
+
+Español (fuente de verdad), inglés, francés y portugués de Brasil. Todo texto visible sale de `src/i18n/`: para sumar uno,
+primero la clave en `es.ts` y después en los otros tres (si falta una, `tsc` falla, y un test avisa si una traducción
+quedó igual al español). **fr y pt-BR son un primer borrador** que tiene que revisar una persona. El idioma inicial es el
+último elegido, o el del navegador si es uno de los cuatro, o español. Con una sola URL los buscadores indexan una sola
+versión: el SEO por idioma exigiría una URL por idioma con prerenderizado.
+
 ## Fotos
 
 Las fotos las sirve el backend. El frontend las pide una sola vez en `loadPhotos` (`src/api/photos.ts`, hoy devuelve una
 lista vacía y la página muestra placeholders) y espera una lista de `PhotoData` (`src/api/contract.ts`).
+
+## Pendientes
+
+`PLAN.md` lista el estado y lo que falta aportar (URLs de Airbnb y Booking, textos de Instalaciones, logo, fotos y backend).
 
 ## Estructura
 
