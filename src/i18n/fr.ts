@@ -1,0 +1,97 @@
+// BORRADOR SIN REVISAR: primer borrador en francés a partir del español.
+// Hay que revisarlo con una persona que hable francés antes de publicar.
+import type { Translation } from './es'
+
+export const fr: Translation = {
+  'meta.title': 'La Casa de los Vientos · Auberge à Salta',
+  'meta.description':
+    'Auberge à San Carlos, vallée Calchaquí, Salta. Chambres privées, petit-déjeuner salteño et ambiance familiale. Vérifiez les disponibilités sur WhatsApp.',
+  'lang.label': 'Langue',
+
+  'nav.label': 'Principale',
+  'nav.conocenos': 'À propos',
+  'nav.habitaciones': 'Chambres',
+  'nav.instalaciones': 'Installations',
+  'nav.contacto': 'Contact',
+  'header.kicker': 'Auberge · {province}',
+  'header.logoLabel': '{name}, accueil',
+  'header.menuOpen': 'Ouvrir le menu',
+  'header.menuClose': 'Fermer le menu',
+
+  'hero.location': '{locality} · Vallée Calchaquí, {province}',
+  'hero.title': 'Le Refuge Authentique des Vallées Calchaquíes',
+  'hero.lead':
+    'Une auberge en adobe centenaire, aux murs chaulés et aux plafonds en cardón. Entre vignobles d’altitude, silence de montagne et feu allumé à la tombée du jour.',
+  'highlight.breakfast.title': 'Petit-déjeuner salteño',
+  'highlight.breakfast.text': 'Pains et confiture de cayote',
+  'highlight.family.title': 'Ambiance familiale',
+  'highlight.family.text': 'La chaleur d’un foyer',
+
+  'booking.formLabel': 'Vérifier les disponibilités',
+  'booking.checkIn': 'Arrivée',
+  'booking.checkOut': 'Départ',
+  'booking.guests': 'Voyageurs',
+  'booking.room': 'Chambre',
+  'booking.anyRoom': 'Indifférent',
+  'booking.submit': 'Voir les disponibilités',
+
+  'about.overline': 'Patrimoine Calchaquí & Racines',
+  'about.title': 'Là où le vent de la montagne murmure l’histoire de la demeure',
+  'about.p1.before': 'Située sur un ancien sentier de muletiers qui reliait les vallées à la puna, ',
+  'about.p1.after':
+    ' conserve l’architecture sobre et thermique de l’adobe pétri avec la paille des prairies d’altitude. Son emblème rend hommage à la girouette historique en fer forgé qui, depuis le XIXᵉ siècle, guidait les voyageurs au gré des caprices du vent zonda.',
+  'about.p2':
+    'Chaque recoin a été restauré dans le respect du patrimoine : solides poutres de cardón récupérées, sols cuits au four à bois, couvertures tissées sur métier traditionnel par des artisans de Seclantás et un calme ininterrompu que seul le Nord argentin peut offrir.',
+  'about.stat.rooms.title': 'Chambres privées',
+  'about.stat.rooms.text': 'Intimité absolue et repos',
+  'about.stat.people.title': 'Personnes',
+  'about.stat.people.text': 'Capacité totale de l’auberge',
+  'about.quote':
+    '« {name} n’est pas un hôtel de passage ; c’est une pause sacrée entre les formations rougeâtres de la gorge et le parfum doux du Torrontés. »',
+  'about.caption.title': 'Patio des Jasmins',
+  'about.caption.text': 'Un lieu pour le thé andin et la lecture au coucher du soleil',
+  'about.eco': 'Construction écologique en terre cuite',
+
+  'rooms.overline': 'Chambres',
+  'rooms.title': 'Un repos profond en harmonie avec la terre',
+  'rooms.intro': '{rooms} chambres privées, pour une capacité totale de {people} personnes.',
+  'rooms.number': 'Chambre {number}',
+  'beds.double.one': '{count} lit double',
+  'beds.double.other': '{count} lits doubles',
+  'beds.single.one': '{count} lit simple',
+  'beds.single.other': '{count} lits simples',
+  'capacity.one': '{count} personne',
+  'capacity.other': '{count} personnes',
+  'photo.alt': '{name}, photo {n}',
+
+  'facilities.overline': 'Espaces de Repos & Nature',
+  'facilities.title': 'Des installations pensées pour se reconnecter',
+  'facility.patios.title': 'Patios',
+  'facility.patios.text': 'TODO : texte des Patios.',
+  'facility.desayunador.title': 'Salle du petit-déjeuner',
+  'facility.desayunador.text': 'TODO : texte de la Salle du petit-déjeuner.',
+  'facility.pileta.title': 'Piscine',
+  'facility.pileta.text': 'TODO : texte de la Piscine.',
+  'facility.anfitriones.title': 'Hôtes',
+  'facility.anfitriones.text': 'TODO : texte des Hôtes.',
+
+  'contact.overline': 'Retrouvez-nous à {locality}',
+  'contact.title': 'Arriver au cœur de la gorge',
+  'contact.address': 'Vallée Calchaquí, {province}, Argentine',
+  'contact.directions': 'Itinéraire',
+  'contact.whatsapp': 'WhatsApp',
+  'contact.phone': 'Téléphone',
+  'contact.email': 'E-mail',
+  'contact.instagram': 'Instagram',
+  'whatsapp.generic': 'Bonjour ! Je souhaiterais des renseignements sur {name}.',
+
+  'footer.description':
+    'Auberge coloniale au cœur des vallées Calchaquíes. Sérénité, silence andin et hospitalité ancestrale de Salta.',
+  'footer.location': 'Localisation',
+  'footer.address2': 'Vallée Calchaquí',
+  'footer.address3': '{province}, Argentine',
+  'footer.contact': 'Contact',
+  'footer.whatsapp': 'WhatsApp',
+  'footer.explore': 'Explorer',
+  'footer.rights': '© {year} {name}. Tous droits réservés. Vallée Calchaquí, {province}.',
+}

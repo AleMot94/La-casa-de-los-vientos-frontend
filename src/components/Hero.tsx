@@ -1,20 +1,22 @@
 import heroImage from '../assets/img/hero.svg'
 import { siteConfig } from '../data/siteConfig'
+import { useI18n } from '../i18n/useI18n'
 import { BookingBar } from './BookingBar'
 import { Icon } from './Icon'
 
 const pill =
   'inline-flex items-center gap-1 rounded-full px-4 py-1 text-overline font-bold uppercase tracking-[0.1em] shadow-soft backdrop-blur-md'
 
-const { locality, region, province } = siteConfig.location
-
-const highlights = [
-  { icon: 'bakery_dining', title: 'Desayuno Salteño', text: 'Panes y dulces de cayote' },
-  // TODO(confirmar): el subtítulo lo escribimos a partir de «ambiente familiar»; sin datos concretos.
-  { icon: 'family_home', title: 'Ambiente familiar', text: 'Calidez de hogar' },
-]
+const { locality, province } = siteConfig.location
 
 export function Hero() {
+  const { t } = useI18n()
+
+  const highlights = [
+    { icon: 'bakery_dining', title: t('highlight.breakfast.title'), text: t('highlight.breakfast.text') },
+    { icon: 'family_home', title: t('highlight.family.title'), text: t('highlight.family.text') },
+  ]
+
   return (
     <section id="inicio" aria-labelledby="hero-title" className="relative w-full overflow-hidden bg-sand">
       <div className="relative flex min-h-[92vh] w-full items-end overflow-hidden pt-36 pb-12 lg:pb-16">
@@ -22,11 +24,11 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-canvas from-10% via-canvas/75 via-50% to-black/20" />
         <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
 
-        <div className="container-site relative z-10 flex flex-col gap-6">
+        <div className="container-site relative z-10 flex w-full flex-col gap-6">
           <div className="flex flex-wrap items-center gap-2">
             <span className={`${pill} bg-sand/90 text-primary`}>
               <Icon name="explore" className="!text-[16px] text-secondary" />
-              {locality} · {region}, {province}
+              {t('hero.location', { locality, province })}
             </span>
           </div>
 
@@ -35,13 +37,9 @@ export function Hero() {
               id="hero-title"
               className="font-display text-display-sm md:text-display leading-[1.08] tracking-tight text-primary"
             >
-              El Refugio Auténtico de los Valles Calchaquíes
+              {t('hero.title')}
             </h1>
-            {/* TODO(confirmar): adobe centenario, muros encalados, cielorrasos de cardón, viñedos de altura. */}
-            <p className="max-w-2xl text-lead text-ink">
-              Una hostería de adobe centenario, muros encalados y cielorrasos de cardón. Entre viñedos de altura,
-              silencios de montaña y el fuego encendido al caer la tarde.
-            </p>
+            <p className="max-w-2xl text-lead text-ink">{t('hero.lead')}</p>
           </div>
 
           <BookingBar />
@@ -52,7 +50,7 @@ export function Hero() {
         <div className="container-site">
           <ul className="mx-auto grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
             {highlights.map((h) => (
-              <li key={h.title} className="flex items-center gap-3 p-1 sm:justify-center">
+              <li key={h.icon} className="flex items-center gap-3 p-1 sm:justify-center">
                 <Icon name={h.icon} className="!text-[26px] text-secondary" />
                 <div className="flex flex-col">
                   <span className="text-[16px] font-semibold text-ink">{h.title}</span>

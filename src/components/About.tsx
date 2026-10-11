@@ -1,40 +1,32 @@
 import { rooms, TOTAL_CAPACITY } from '../data/rooms'
 import { siteConfig } from '../data/siteConfig'
+import { useI18n } from '../i18n/useI18n'
 import { Icon } from './Icon'
 import { Photo } from './Photo'
 import { SectionHeading } from './SectionHeading'
 
-// Los números salen de los datos de las habitaciones, no se escriben a mano.
-const stats = [
-  { value: rooms.length, title: 'Habitaciones privadas', text: 'Privacidad absoluta y descanso', accent: 'primary' },
-  { value: TOTAL_CAPACITY, title: 'Personas', text: 'Capacidad total de la hostería', accent: 'secondary' },
-] as const
-
-// TODO(confirmar): toda la historia y la construcción de esta sección vienen del mockup, no del cliente.
 export function About() {
+  const { t } = useI18n()
+
+  // Los números salen de los datos de las habitaciones, no se escriben a mano.
+  const stats = [
+    { value: rooms.length, title: t('about.stat.rooms.title'), text: t('about.stat.rooms.text'), accent: 'primary' },
+    { value: TOTAL_CAPACITY, title: t('about.stat.people.title'), text: t('about.stat.people.text'), accent: 'secondary' },
+  ]
+
   return (
     <section id="conocenos" aria-labelledby="about-title" className="w-full bg-canvas py-16 lg:py-24">
       <div className="container-site grid grid-cols-1 items-center gap-16 lg:grid-cols-12">
         <div className="flex flex-col gap-6 lg:col-span-7">
-          <SectionHeading
-            id="about-title"
-            overline="Patrimonio Calchaquí & Raigambre"
-            title="Donde el viento del cerro susurra la historia de la casona"
-          />
+          <SectionHeading id="about-title" overline={t('about.overline')} title={t('about.title')} />
 
           <div className="flex flex-col gap-4 text-lead text-ink">
             <p>
-              Emplazada sobre un antiguo sendero arriero que unía los valles con la puna,{' '}
-              <strong className="font-semibold">{siteConfig.name}</strong> conserva la arquitectura sobria y
-              térmica del adobe amasado con paja de las vegas altas. Su emblema rinde tributo a la
-              histórica veleta de hierro forjado que desde el siglo XIX orientaba a los caminantes según
-              los caprichos del viento zonda.
+              {t('about.p1.before')}
+              <strong className="font-semibold">{siteConfig.name}</strong>
+              {t('about.p1.after')}
             </p>
-            <p className="text-body text-ink-soft">
-              Cada rincón ha sido intervenido con respeto patrimonial: tirantes macizos de cardón
-              rescatados, pisos cocidos a horno de leña, mantas tejidas en telar criollo por artesanos de
-              Seclantás y una quietud ininterrumpida que solo el Norte Argentino puede brindar.
-            </p>
+            <p className="text-body text-ink-soft">{t('about.p2')}</p>
           </div>
 
           <ul className="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-2">
@@ -55,10 +47,7 @@ export function About() {
 
           <figure className="flex items-center gap-4 rounded-lg bg-sand p-4">
             <Icon name="format_quote" className="!text-[32px] shrink-0 text-primary" />
-            <blockquote className="text-small text-ink italic">
-              “{siteConfig.name} no es un hotel de paso; es una pausa sagrada entre las formaciones rojizas de
-              la quebrada y el perfume dulce del Torrontés.”
-            </blockquote>
+            <blockquote className="text-small text-ink italic">{t('about.quote', { name: siteConfig.name })}</blockquote>
           </figure>
         </div>
 
@@ -67,8 +56,8 @@ export function About() {
             <Photo id="about/01" alt={siteConfig.name} ratio="4/5" />
             <div className="absolute inset-x-4 bottom-10 flex items-center justify-between rounded-lg bg-white/90 p-4 shadow-soft backdrop-blur-md">
               <div>
-                <h3 className="font-sans text-[16px] font-semibold text-primary">Patio de los Jazmines</h3>
-                <p className="text-small text-ink-soft">Lugar del té andino y lectura al atardecer</p>
+                <h3 className="font-sans text-[16px] font-semibold text-primary">{t('about.caption.title')}</h3>
+                <p className="text-small text-ink-soft">{t('about.caption.text')}</p>
               </div>
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <Icon name="local_cafe" className="!text-[20px]" />
@@ -79,7 +68,7 @@ export function About() {
           <div className="relative z-10 -mt-10 mx-4 flex items-center gap-3 rounded-lg bg-primary p-4 text-canvas shadow-float">
             <span className="flex items-center gap-2 text-label">
               <Icon name="verified_user" className="!text-[24px] shrink-0 text-blush" />
-              Construcción ecológica de barro cocido
+              {t('about.eco')}
             </span>
           </div>
         </div>

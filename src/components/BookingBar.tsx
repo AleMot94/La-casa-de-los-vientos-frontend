@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { rooms, TOTAL_CAPACITY } from '../data/rooms'
+import { useI18n } from '../i18n/useI18n'
 import { addDays, fromISO, toISO, today } from '../lib/dates'
 import { Icon } from './Icon'
 
@@ -18,6 +19,7 @@ function Label({ htmlFor, icon, children }: { htmlFor: string; icon: string; chi
 }
 
 export function BookingBar() {
+  const { t } = useI18n()
   const [checkIn, setCheckIn] = useState(() => toISO(addDays(today(), 14)))
   const [checkOut, setCheckOut] = useState(() => toISO(addDays(today(), 18)))
   const [guests, setGuests] = useState('2')
@@ -39,11 +41,11 @@ export function BookingBar() {
   return (
     <form
       onSubmit={onSubmit}
-      aria-label="Consultar disponibilidad"
-      className="mt-2 grid grid-cols-1 items-end gap-4 rounded-lg border border-white/60 bg-white/95 p-4 shadow-float backdrop-blur-xl sm:grid-cols-2 md:p-6 lg:grid-cols-5"
+      aria-label={t('booking.formLabel')}
+      className="mt-2 grid grid-cols-1 items-end gap-4 rounded-lg border border-white/60 bg-white/95 p-4 shadow-float backdrop-blur-xl sm:grid-cols-2 md:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.6fr)_minmax(0,1.3fr)_minmax(0,1fr)]"
     >
       <div className="flex flex-col gap-1">
-        <Label htmlFor="check-in" icon="calendar_today">Llegada</Label>
+        <Label htmlFor="check-in" icon="calendar_today">{t('booking.checkIn')}</Label>
         <input
           id="check-in"
           type="date"
@@ -55,7 +57,7 @@ export function BookingBar() {
         />
       </div>
       <div className="flex flex-col gap-1">
-        <Label htmlFor="check-out" icon="event">Salida</Label>
+        <Label htmlFor="check-out" icon="event">{t('booking.checkOut')}</Label>
         <input
           id="check-out"
           type="date"
@@ -67,7 +69,7 @@ export function BookingBar() {
         />
       </div>
       <div className="flex flex-col gap-1">
-        <Label htmlFor="guests" icon="group">Huéspedes</Label>
+        <Label htmlFor="guests" icon="group">{t('booking.guests')}</Label>
         <input
           id="guests"
           type="number"
@@ -81,9 +83,9 @@ export function BookingBar() {
         />
       </div>
       <div className="flex flex-col gap-1">
-        <Label htmlFor="suite" icon="bed">Habitación</Label>
+        <Label htmlFor="suite" icon="bed">{t('booking.room')}</Label>
         <select id="suite" className={field} value={room} onChange={(e) => setRoom(e.target.value)}>
-          <option value="todas">Cualquiera disponible</option>
+          <option value="todas">{t('booking.anyRoom')}</option>
           {rooms.map((r) => (
             <option key={r.id} value={r.id}>{r.name}</option>
           ))}
@@ -94,7 +96,7 @@ export function BookingBar() {
         className="inline-flex h-12 w-full items-center justify-center gap-2 rounded bg-primary text-label text-canvas shadow-soft transition-colors hover:bg-primary-deep"
       >
         <Icon name="search" className="!text-[20px]" />
-        Ver Disponibilidad
+        {t('booking.submit')}
       </button>
     </form>
   )

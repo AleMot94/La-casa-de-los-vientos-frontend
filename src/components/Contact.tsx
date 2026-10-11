@@ -1,54 +1,56 @@
 import { Fragment } from 'react'
 import { siteConfig } from '../data/siteConfig'
+import { useI18n } from '../i18n/useI18n'
 import { whatsappLink } from '../lib/whatsapp'
 import { Icon } from './Icon'
 import { SectionHeading } from './SectionHeading'
 
 const { contact, social, location, maps } = siteConfig
 
-const cards = [
-  {
-    icon: 'chat',
-    tone: 'bg-tertiary text-canvas',
-    label: 'WhatsApp',
-    value: contact.phoneDisplay,
-    href: whatsappLink(`¡Hola! Quisiera hacer una consulta sobre ${siteConfig.name}.`),
-    external: true,
-  },
-  {
-    icon: 'call',
-    tone: 'bg-primary text-canvas',
-    label: 'Teléfono',
-    value: contact.phoneDisplay,
-    href: `tel:${contact.phoneHref}`,
-  },
-  {
-    icon: 'mail',
-    tone: 'bg-secondary-deep text-canvas',
-    label: 'Correo electrónico',
-    value: contact.email,
-    href: `mailto:${contact.email}`,
-  },
-  {
-    icon: 'photo_camera',
-    tone: 'bg-mortar text-primary',
-    label: 'Instagram',
-    value: social.instagramHandle,
-    href: social.instagramUrl,
-    external: true,
-  },
-]
-
 export function Contact() {
+  const { t } = useI18n()
+
+  const cards = [
+    {
+      icon: 'chat',
+      tone: 'bg-tertiary text-canvas',
+      label: t('contact.whatsapp'),
+      value: contact.phoneDisplay,
+      href: whatsappLink(t('whatsapp.generic', { name: siteConfig.name })),
+      external: true,
+    },
+    {
+      icon: 'call',
+      tone: 'bg-primary text-canvas',
+      label: t('contact.phone'),
+      value: contact.phoneDisplay,
+      href: `tel:${contact.phoneHref}`,
+    },
+    {
+      icon: 'mail',
+      tone: 'bg-secondary-deep text-canvas',
+      label: t('contact.email'),
+      value: contact.email,
+      href: `mailto:${contact.email}`,
+    },
+    {
+      icon: 'photo_camera',
+      tone: 'bg-mortar text-primary',
+      label: t('contact.instagram'),
+      value: social.instagramHandle,
+      href: social.instagramUrl,
+      external: true,
+    },
+  ]
+
   return (
     <section id="contacto" aria-labelledby="contact-title" className="w-full bg-canvas py-16 lg:py-24">
       <div className="container-site flex flex-col gap-12">
-        {/* TODO(confirmar): «el corazón de la quebrada» es del mockup. */}
         <SectionHeading
           id="contact-title"
           className="max-w-2xl"
-          overline={`Encontranos en ${location.locality}`}
-          title="Llegar al corazón de la quebrada"
+          overline={t('contact.overline', { locality: location.locality })}
+          title={t('contact.title')}
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -59,9 +61,7 @@ export function Contact() {
               </span>
               <address className="flex flex-col not-italic">
                 <span className="font-display text-card text-primary">{location.locality}</span>
-                <span className="text-body text-ink-soft">
-                  {location.region}, {location.province}, {location.country}
-                </span>
+                <span className="text-body text-ink-soft">{t('contact.address', { province: location.province })}</span>
               </address>
             </div>
             <a
@@ -71,13 +71,13 @@ export function Contact() {
               className="inline-flex h-12 w-fit items-center justify-center gap-2 rounded bg-primary px-6 text-label text-canvas shadow-soft transition-colors hover:bg-primary-deep"
             >
               <Icon name="directions" className="!text-[20px]" />
-              Cómo llegar
+              {t('contact.directions')}
             </a>
           </div>
 
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {cards.map((c) => (
-              <li key={c.label}>
+              <li key={c.icon}>
                 <a
                   href={c.href}
                   className="group flex h-full items-start gap-3 rounded-lg border border-mortar bg-sand p-4 transition-colors hover:bg-mortar"

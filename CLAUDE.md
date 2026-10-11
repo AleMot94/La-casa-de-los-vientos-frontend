@@ -12,7 +12,8 @@ React + Vite + TypeScript + Tailwind CSS (v4, plugin `@tailwindcss/vite`). Tests
 - `npm test` — tests (vitest)
 
 ## Convenciones
-- Idioma del sitio: español rioplatense con voseo (el mockup usa "usted"; se unificó a voseo). Idiomas previstos: es, en, fr, pt-BR.
+- Idiomas: es (fuente de verdad, español rioplatense con voseo), en, fr y pt-BR. **fr y pt-BR son un primer borrador** que debe revisar una persona (ver la cabecera de cada archivo).
+- **Todo texto visible** (contenido, `alt`, `aria-label`, `<title>`, meta description, mensajes de WhatsApp) sale de `src/i18n/`; no se escribe en los componentes. Para sumar uno: primero la clave en `es.ts` y después en los otros tres (si falta una, `tsc` rompe; un test avisa si queda un texto igual al español).
 - Componentes funcionales en `src/components`, un componente por archivo `.tsx`.
 - Estilos con clases de Tailwind; evitar CSS aparte salvo necesidad.
 - Para estilo y marca, usar las skills `frontend-design` y `marca-hosteria`.
@@ -36,13 +37,16 @@ React + Vite + TypeScript + Tailwind CSS (v4, plugin `@tailwindcss/vite`). Tests
 
 ## Estructura de `src/`
 - `App.tsx`: arma la página.
-- `components/`: una sección por archivo (`Header`, `Hero` + `BookingBar`, `About`, `Rooms`, `Facilities`, `Contact`, `Footer`) más `Photo`, `Icon`, `Logo`, `SectionHeading`.
+- `components/`: una sección por archivo (`Header`, `Hero` + `BookingBar`, `About`, `Rooms`, `Facilities`, `Contact`, `Footer`) más `LanguageSelect`, `Photo`, `Icon`, `Logo`, `SectionHeading`.
+- `i18n/`: `es.ts` (claves y textos, fuente de verdad), `en.ts`, `fr.ts`, `pt-BR.ts`; `translations.ts` (ensambla y exporta `LANGS`), `translate.ts` (`makeT`: reemplaza `{variables}`), `format.ts` (camas, capacidad y fecha larga con `Intl`), `detect.ts` (idioma inicial), `I18nProvider.tsx` + `useI18n.ts` (`const { t, lang, setLang, describeBeds, describeCapacity, formatDate } = useI18n()`).
 - `api/contract.ts`: **solo tipos y constantes** del contrato con el backend futuro.
 - `data/`: `siteConfig.ts` (datos del negocio), `rooms.ts`, `facilities.ts`, `platforms.ts` (documentos, módulos puros importables desde Node), `nav.ts`, `photoIds.ts`. Tests en `data.test.ts`.
-- `lib/`: `dates.ts`, `whatsapp.ts`, `beds.ts` (descripción de camas; provisorio en español).
+- `lib/`: `dates.ts` (fechas locales y `YYYY-MM-DD`), `whatsapp.ts`.
 - `assets/img/hero.svg`: único SVG que queda (placeholder del hero).
 
 ## Notas técnicas
+- Idioma inicial: el elegido antes (`localStorage`, clave `lang`) → idioma del navegador si es uno de los cuatro (`pt-PT` cae en `pt-BR`) → español. Cambiarlo actualiza `<html lang>`, `<title>` y la meta description. Con una sola URL los buscadores indexan una sola versión: el SEO por idioma exigiría una URL por idioma con prerenderizado.
+- Textos con negrita o enlaces dentro: se parten en claves (`about.p1.before` / `after`), no se guarda HTML en los diccionarios.
 - Sin backend: el formulario del hero abrirá WhatsApp (`wa.me`) con el mensaje armado; el de contacto irá a un endpoint configurable.
 - Fechas del contrato como texto `YYYY-MM-DD`, nunca `Date` (`new Date('2026-12-15')` es medianoche UTC y en Argentina da el 14).
 - Íconos: Material Symbols (Google Fonts, ver `index.html`) vía `<Icon name="..." />`.

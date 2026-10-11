@@ -7,11 +7,10 @@ const lng = -65.93076858465554
 export const siteConfig = {
   name: 'La Casa de los Vientos',
 
+  /** Nombres propios: no se traducen. La región («Valle Calchaquí») y el país sí, y viven en los diccionarios. */
   location: {
     locality: 'San Carlos',
-    region: 'Valle Calchaquí',
     province: 'Salta',
-    country: 'Argentina',
     lat,
     lng,
   },

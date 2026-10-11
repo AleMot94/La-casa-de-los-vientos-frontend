@@ -1,0 +1,96 @@
+// Primer borrador en inglés a partir del español: conviene que lo repase una persona.
+import type { Translation } from './es'
+
+export const en: Translation = {
+  'meta.title': 'La Casa de los Vientos · Inn in Salta',
+  'meta.description':
+    'Inn in San Carlos, Calchaquí Valley, Salta. Private rooms, a Salta-style breakfast and a family atmosphere. Check availability on WhatsApp.',
+  'lang.label': 'Language',
+
+  'nav.label': 'Main',
+  'nav.conocenos': 'About us',
+  'nav.habitaciones': 'Rooms',
+  'nav.instalaciones': 'Facilities',
+  'nav.contacto': 'Contact',
+  'header.kicker': 'Inn · {province}',
+  'header.logoLabel': '{name}, home',
+  'header.menuOpen': 'Open menu',
+  'header.menuClose': 'Close menu',
+
+  'hero.location': '{locality} · Calchaquí Valley, {province}',
+  'hero.title': 'The Authentic Refuge of the Calchaquí Valleys',
+  'hero.lead':
+    'An inn of century-old adobe, whitewashed walls and cardón-wood ceilings. Among high-altitude vineyards, mountain silence and a fire lit as evening falls.',
+  'highlight.breakfast.title': 'Salta-style breakfast',
+  'highlight.breakfast.text': 'Breads and cayote preserves',
+  'highlight.family.title': 'Family atmosphere',
+  'highlight.family.text': 'The warmth of home',
+
+  'booking.formLabel': 'Check availability',
+  'booking.checkIn': 'Arrival',
+  'booking.checkOut': 'Departure',
+  'booking.guests': 'Guests',
+  'booking.room': 'Room',
+  'booking.anyRoom': 'Any available',
+  'booking.submit': 'Check Availability',
+
+  'about.overline': 'Calchaquí Heritage & Roots',
+  'about.title': 'Where the mountain wind whispers the story of the old house',
+  'about.p1.before': 'Set on an old muleteers’ trail that once linked the valleys with the puna, ',
+  'about.p1.after':
+    ' keeps the sober, thermal architecture of adobe kneaded with straw from the high meadows. Its emblem pays tribute to the historic wrought-iron weathervane that, since the 19th century, guided travellers according to the whims of the zonda wind.',
+  'about.p2':
+    'Every corner has been restored with respect for its heritage: solid reclaimed cardón beams, floors baked in wood-fired ovens, blankets woven on traditional looms by artisans from Seclantás, and an unbroken stillness that only the Argentine North can offer.',
+  'about.stat.rooms.title': 'Private rooms',
+  'about.stat.rooms.text': 'Absolute privacy and rest',
+  'about.stat.people.title': 'Guests',
+  'about.stat.people.text': 'Total capacity of the inn',
+  'about.quote':
+    '“{name} is not a place to pass through; it is a sacred pause between the reddish rock formations of the ravine and the sweet perfume of Torrontés.”',
+  'about.caption.title': 'Jasmine Courtyard',
+  'about.caption.text': 'A place for Andean tea and reading at sunset',
+  'about.eco': 'Eco-friendly baked-earth construction',
+
+  'rooms.overline': 'Rooms',
+  'rooms.title': 'Deep rest in tune with the land',
+  'rooms.intro': '{rooms} private rooms, with a total capacity for {people} guests.',
+  'rooms.number': 'Room {number}',
+  'beds.double.one': '{count} double bed',
+  'beds.double.other': '{count} double beds',
+  'beds.single.one': '{count} single bed',
+  'beds.single.other': '{count} single beds',
+  'capacity.one': '{count} guest',
+  'capacity.other': '{count} guests',
+  'photo.alt': '{name}, photo {n}',
+
+  'facilities.overline': 'Spaces for Rest & Nature',
+  'facilities.title': 'Facilities designed to reconnect',
+  'facility.patios.title': 'Patios',
+  'facility.patios.text': 'TODO: Patios text.',
+  'facility.desayunador.title': 'Breakfast room',
+  'facility.desayunador.text': 'TODO: Breakfast room text.',
+  'facility.pileta.title': 'Pool',
+  'facility.pileta.text': 'TODO: Pool text.',
+  'facility.anfitriones.title': 'Hosts',
+  'facility.anfitriones.text': 'TODO: Hosts text.',
+
+  'contact.overline': 'Find us in {locality}',
+  'contact.title': 'Reaching the heart of the ravine',
+  'contact.address': 'Calchaquí Valley, {province}, Argentina',
+  'contact.directions': 'Get directions',
+  'contact.whatsapp': 'WhatsApp',
+  'contact.phone': 'Phone',
+  'contact.email': 'Email',
+  'contact.instagram': 'Instagram',
+  'whatsapp.generic': 'Hello! I’d like to ask about {name}.',
+
+  'footer.description':
+    'Colonial inn in the heart of the Calchaquí Valleys. Serenity, Andean silence and ancestral Salta hospitality.',
+  'footer.location': 'Location',
+  'footer.address2': 'Calchaquí Valley',
+  'footer.address3': '{province}, Argentina',
+  'footer.contact': 'Contact',
+  'footer.whatsapp': 'WhatsApp',
+  'footer.explore': 'Explore',
+  'footer.rights': '© {year} {name}. All rights reserved. Calchaquí Valley, {province}.',
+}
