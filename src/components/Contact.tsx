@@ -17,7 +17,7 @@ const showForm = Boolean(endpoint) || import.meta.env.DEV
 export function Contact() {
   const { t } = useI18n()
 
-  const cards = [
+  const cards: { icon: string; tone: string; label: string; value: string; href?: string; external?: boolean }[] = [
     {
       icon: 'chat',
       tone: 'bg-tertiary text-canvas',
@@ -38,7 +38,7 @@ export function Contact() {
       tone: 'bg-secondary-deep text-canvas',
       label: t('contact.email'),
       value: contact.email,
-      href: `mailto:${contact.email}`,
+      // Sin `href`: el correo es solo informativo (no abre el cliente de correo).
     },
     {
       icon: 'photo_camera',
@@ -94,13 +94,9 @@ export function Contact() {
 
           <div className="flex flex-col gap-8">
             <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {cards.map((c) => (
-                <li key={c.icon}>
-                  <a
-                    href={c.href}
-                    className="group flex h-full items-start gap-3 rounded-lg border border-mortar bg-sand p-4 transition-colors hover:bg-mortar"
-                    {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  >
+              {cards.map((c) => {
+                const content = (
+                  <>
                     <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${c.tone}`}>
                       <Icon name={c.icon} className="!text-[20px]" />
                     </span>
@@ -120,9 +116,25 @@ export function Contact() {
                         ))}
                       </span>
                     </span>
-                  </a>
-                </li>
-              ))}
+                  </>
+                )
+                const box = 'flex h-full items-start gap-3 rounded-lg border border-mortar bg-sand p-4'
+                return (
+                  <li key={c.icon}>
+                    {c.href ? (
+                      <a
+                        href={c.href}
+                        className={`group ${box} transition-colors hover:bg-mortar`}
+                        {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      <div className={box}>{content}</div>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
             <PlatformCards />
           </div>

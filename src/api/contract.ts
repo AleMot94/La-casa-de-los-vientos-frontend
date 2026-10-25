@@ -38,10 +38,11 @@ export interface Room {
   name: string
   beds: Beds
   /**
-   * Ids de foto: ruta relativa sin extensión, ej. `rooms/01-sonqoy/01`.
+   * Carpeta de sus fotos, ej. `rooms/01-sonqoy`. Las fotos son las que el backend entrega con id
+   * `<carpeta>/NN` (`01`, `02`…); cuántas hay no se guarda acá.
    * La capacidad NO se guarda: se calcula (`double * 2 + single`).
    */
-  photos: string[]
+  photoFolder: string
 }
 
 export type FacilityId = 'patios' | 'desayunador' | 'pileta' | 'anfitriones'
@@ -50,7 +51,8 @@ export interface Facility {
   id: FacilityId
   /** Posición en la página (1 a 4). */
   order: number
-  photos: string[]
+  /** Carpeta de sus fotos, ej. `facilities/patios` (ver `Room.photoFolder`). */
+  photoFolder: string
 }
 
 export type PlatformId = 'airbnb' | 'booking'
@@ -87,7 +89,7 @@ export interface PhotoFile {
  * - Los HEIC de iPhone no los leen la mayoría de las librerías: exportarlos a JPG antes.
  */
 export interface PhotoData {
-  /** El mismo id que usan `Room.photos` y `Facility.photos`, ej. `rooms/01-sonqoy/01`. */
+  /** `<carpeta>/NN`, con la carpeta de `Room.photoFolder` o `Facility.photoFolder`, ej. `rooms/01-sonqoy/01`. */
   id: string
   /** Tamaño real del original, para reservar el lugar de la imagen sin saltos de layout. */
   width: number

@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest'
-import { facilities, PHOTOS_PER_FACILITY } from './facilities'
+import { facilities } from './facilities'
 import { platforms } from './platforms'
-import { PHOTOS_PER_ROOM, roomCapacity, rooms, TOTAL_CAPACITY } from './rooms'
+import { roomCapacity, rooms, TOTAL_CAPACITY } from './rooms'
 import { siteConfig } from './siteConfig'
 
-const PHOTO_ID = /^(rooms|facilities)\/[a-z0-9-]+\/\d{2}$/
+const PHOTO_FOLDER = /^(rooms|facilities)\/[a-z0-9-]+$/
 
 describe('habitaciones', () => {
   it('son 7, numeradas de 1 a 7, con ids únicos en minúsculas', () => {
@@ -31,30 +31,27 @@ describe('habitaciones', () => {
     expect(TOTAL_CAPACITY).toBe(25)
   })
 
-  it('cada una tiene 6 fotos en su carpeta numerada', () => {
+  it('cada una apunta a su carpeta de fotos (rooms/NN-id)', () => {
     for (const room of rooms) {
-      const folder = `rooms/${String(room.number).padStart(2, '0')}-${room.id}`
-      expect(room.photos).toHaveLength(PHOTOS_PER_ROOM)
-      expect(room.photos[0]).toBe(`${folder}/01`)
-      expect(room.photos[5]).toBe(`${folder}/06`)
+      expect(room.photoFolder).toBe(`rooms/${String(room.number).padStart(2, '0')}-${room.id}`)
     }
   })
 })
 
 describe('instalaciones', () => {
-  it('son 4, en orden, con 5 fotos cada una', () => {
+  it('son 4, en orden, con su carpeta de fotos', () => {
     expect(facilities.map((f) => f.id)).toEqual(['patios', 'desayunador', 'pileta', 'anfitriones'])
     expect(facilities.map((f) => f.order)).toEqual([1, 2, 3, 4])
-    for (const f of facilities) expect(f.photos).toHaveLength(PHOTOS_PER_FACILITY)
+    for (const f of facilities) expect(f.photoFolder).toBe(`facilities/${f.id}`)
   })
 })
 
 describe('fotos', () => {
-  it('62 ids únicos y con el formato esperado', () => {
-    const all = [...rooms, ...facilities].flatMap((x) => x.photos)
-    expect(all).toHaveLength(7 * 6 + 4 * 5)
+  it('11 carpetas únicas y con el formato esperado', () => {
+    const all = [...rooms, ...facilities].map((x) => x.photoFolder)
+    expect(all).toHaveLength(7 + 4)
     expect(new Set(all).size).toBe(all.length)
-    for (const id of all) expect(id).toMatch(PHOTO_ID)
+    for (const folder of all) expect(folder).toMatch(PHOTO_FOLDER)
   })
 })
 

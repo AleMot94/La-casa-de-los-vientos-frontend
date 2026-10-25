@@ -89,8 +89,9 @@ versión: el SEO por idioma exigiría una URL por idioma con prerenderizado.
 
 ## Fotos
 
-Las fotos las sirve el backend. El frontend las pide una sola vez en `loadPhotos` (`src/api/photos.ts`, hoy devuelve una
-lista vacía y la página muestra placeholders) y espera una lista de `PhotoData` (`src/api/contract.ts`).
+Las fotos las sirve el backend. El frontend las pide una sola vez en `loadPhotos` (`src/api/photos.ts`, `GET /api/photos`)
+y espera una lista de `PhotoData` (`src/api/contract.ts`). Si el pedido falla, la página muestra placeholders. En desarrollo
+el proxy de `vite.config.ts` manda `/api` y `/photos` a `http://localhost:3001`; la guía completa está en `FRONTEND.md`.
 
 ## Pendientes
 

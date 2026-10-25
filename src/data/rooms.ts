@@ -3,9 +3,6 @@
  * Módulo puro: Node lo puede importar sin Vite.
  */
 import type { Room } from '../api/contract'
-import { photoIds } from './photoIds.ts'
-
-export const PHOTOS_PER_ROOM = 6
 
 export const rooms: Room[] = [
   {
@@ -13,49 +10,49 @@ export const rooms: Room[] = [
     number: 1,
     name: 'Sonqoy',
     beds: { double: 1, single: 0 },
-    photos: photoIds('rooms/01-sonqoy', PHOTOS_PER_ROOM),
+    photoFolder: 'rooms/01-sonqoy',
   },
   {
     id: 'el-fuego',
     number: 2,
     name: 'El Fuego',
     beds: { double: 0, single: 3 },
-    photos: photoIds('rooms/02-el-fuego', PHOTOS_PER_ROOM),
+    photoFolder: 'rooms/02-el-fuego',
   },
   {
     id: 'los-buhos',
     number: 3,
     name: 'Los Búhos',
     beds: { double: 1, single: 1 },
-    photos: photoIds('rooms/03-los-buhos', PHOTOS_PER_ROOM),
+    photoFolder: 'rooms/03-los-buhos',
   },
   {
     id: 'el-amanecer',
     number: 4,
     name: 'El Amanecer',
     beds: { double: 1, single: 2 },
-    photos: photoIds('rooms/04-el-amanecer', PHOTOS_PER_ROOM),
+    photoFolder: 'rooms/04-el-amanecer',
   },
   {
     id: 'los-teros',
     number: 5,
     name: 'Los Teros',
     beds: { double: 1, single: 2 },
-    photos: photoIds('rooms/05-los-teros', PHOTOS_PER_ROOM),
+    photoFolder: 'rooms/05-los-teros',
   },
   {
     id: 'el-atardecer',
     number: 6,
     name: 'El Atardecer',
     beds: { double: 1, single: 2 },
-    photos: photoIds('rooms/06-el-atardecer', PHOTOS_PER_ROOM),
+    photoFolder: 'rooms/06-el-atardecer',
   },
   {
     id: 'huayra-huasi',
     number: 7,
     name: 'Huayra Huasi',
     beds: { double: 1, single: 3 },
-    photos: photoIds('rooms/07-huayra-huasi', PHOTOS_PER_ROOM),
+    photoFolder: 'rooms/07-huayra-huasi',
   },
 ]
 

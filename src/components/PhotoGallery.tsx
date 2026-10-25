@@ -5,8 +5,8 @@ import { Icon } from './Icon'
 import { Photo, PhotoPlaceholder, type PhotoRatio } from './Photo'
 
 interface PhotoGalleryProps {
-  /** Ids de las fotos, en orden. Las que el backend todavía no entregó no se muestran. */
-  ids: string[]
+  /** Carpeta de las fotos (`rooms/01-sonqoy`): se muestran todas las numeradas que el backend entregó, en orden. */
+  folder: string
   /** Nombre del lugar (habitación o instalación): arma el texto alternativo y la etiqueta. */
   name: string
   ratio: PhotoRatio
@@ -16,26 +16,26 @@ interface PhotoGalleryProps {
 }
 
 /**
- * Fotos de una habitación o instalación. Sin fotos, el placeholder; con una sola, la foto; con
- * varias, un carrusel que se desliza (CSS `scroll-snap`) y carga cada foto recién cuando se acerca.
+ * Fotos de una habitación o instalación, tantas como entregue el backend para su carpeta. Sin fotos, el
+ * placeholder; con una sola, la foto; con varias, un carrusel que se desliza (CSS `scroll-snap`) y carga
+ * cada foto recién cuando se acerca.
  */
-export function PhotoGallery({ ids, name, ratio, sizes, className = '' }: PhotoGalleryProps) {
+export function PhotoGallery({ folder, name, ratio, sizes, className = '' }: PhotoGalleryProps) {
   const { t } = useI18n()
-  const { status, getPhoto } = usePhotos()
-  const available = ids.filter((id) => getPhoto(id))
-  // El número sale de la posición original (la foto 3 sigue siendo «foto 3» aunque falte la 2).
+  const { status, idsIn } = usePhotos()
+  const ids = idsIn(folder)
   const alt = (id: string) => t('photo.alt', { name, n: ids.indexOf(id) + 1 })
 
-  if (available.length === 0) {
-    return <PhotoPlaceholder id={ids[0]} ratio={ratio} pulsing={status === 'loading'} className={className} />
+  if (ids.length === 0) {
+    return <PhotoPlaceholder id={`${folder}/01`} ratio={ratio} pulsing={status === 'loading'} className={className} />
   }
-  if (available.length === 1) {
-    return <Photo id={available[0]} alt={alt(available[0])} ratio={ratio} sizes={sizes} className={className} />
+  if (ids.length === 1) {
+    return <Photo id={ids[0]} alt={alt(ids[0])} ratio={ratio} sizes={sizes} className={className} />
   }
-  return <Carousel ids={available} name={name} alt={alt} ratio={ratio} sizes={sizes} className={className} />
+  return <Carousel ids={ids} name={name} alt={alt} ratio={ratio} sizes={sizes} className={className} />
 }
 
-interface CarouselProps extends Omit<PhotoGalleryProps, 'ids'> {
+interface CarouselProps extends Omit<PhotoGalleryProps, 'folder'> {
   ids: string[]
   alt: (id: string) => string
 }

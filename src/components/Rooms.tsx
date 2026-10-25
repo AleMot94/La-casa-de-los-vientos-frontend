@@ -38,7 +38,7 @@ export function Rooms() {
               >
                 <div className={wide ? 'md:w-1/2' : ''}>
                   <PhotoGallery
-                    ids={room.photos}
+                    folder={room.photoFolder}
                     name={room.name}
                     ratio="4/3"
                     sizes={wide ? WIDE_SIZES : CARD_SIZES}
