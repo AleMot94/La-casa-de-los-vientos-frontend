@@ -59,6 +59,9 @@ export const ptBR: Translation = {
   'about.caption.title': 'Pátio dos Jasmins',
   'about.caption.text': 'Lugar do chá andino e da leitura ao entardecer',
   'about.eco': 'Construção ecológica de barro cozido',
+  'about.carousel.label': 'Fotos da pousada',
+  'about.carousel.alt': '{name}, imagem {current} de {total}',
+  'about.carousel.goTo': 'Ver a foto {current} de {total}',
 
   'rooms.overline': 'Quartos',
   'rooms.title': 'Descanso profundo em sintonia com a terra',

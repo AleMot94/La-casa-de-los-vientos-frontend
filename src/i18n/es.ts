@@ -72,6 +72,9 @@ export const es = {
   'about.caption.title': 'Patio de los Jazmines',
   'about.caption.text': 'Lugar del té andino y lectura al atardecer',
   'about.eco': 'Construcción ecológica de barro cocido',
+  'about.carousel.label': 'Fotos de la hostería',
+  'about.carousel.alt': '{name}, foto {current} de {total}',
+  'about.carousel.goTo': 'Ver la foto {current} de {total}',
 
   // ── Habitaciones ──────────────────────────────────────────────────────────
   'rooms.overline': 'Habitaciones',

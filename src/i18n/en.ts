@@ -58,6 +58,9 @@ export const en: Translation = {
   'about.caption.title': 'Jasmine Courtyard',
   'about.caption.text': 'A place for Andean tea and reading at sunset',
   'about.eco': 'Eco-friendly baked-earth construction',
+  'about.carousel.label': 'Photos of the inn',
+  'about.carousel.alt': '{name}, photo {current} of {total}',
+  'about.carousel.goTo': 'Show photo {current} of {total}',
 
   'rooms.overline': 'Rooms',
   'rooms.title': 'Deep rest in tune with the land',
