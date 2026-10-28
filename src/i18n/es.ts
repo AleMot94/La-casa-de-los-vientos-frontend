@@ -93,6 +93,8 @@ export const es = {
   'gallery.prev': 'Foto anterior',
   'gallery.next': 'Foto siguiente',
   'gallery.counter': '{current} de {total}',
+  'gallery.open': 'Ver las fotos de {name}',
+  'gallery.close': 'Cerrar la galería',
 
   // ── Instalaciones ─────────────────────────────────────────────────────────
   'facilities.overline': 'Espacios de Descanso & Naturaleza',

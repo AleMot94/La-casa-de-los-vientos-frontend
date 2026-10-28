@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { PhotoData } from '../api/contract'
-import { buildSrcSet, fallbackFiles, idsInFolder, indexPhotos, pickSrc } from './photo'
+import { buildSrcSet, fallbackFiles, idsInFolder, indexPhotos, pickSrc, wrapIndex } from './photo'
 
 const files = [
   { url: '/x-1200.webp', width: 1200 },
@@ -93,5 +93,22 @@ describe('idsInFolder', () => {
   it('una carpeta sin fotos da una lista vacía', () => {
     expect(idsInFolder(registro, 'facilities/patios')).toEqual([])
     expect(idsInFolder({}, 'rooms/01-sonqoy')).toEqual([])
+  })
+})
+
+describe('wrapIndex', () => {
+  it('deja igual un índice dentro del rango', () => {
+    expect(wrapIndex(0, 3)).toBe(0)
+    expect(wrapIndex(2, 3)).toBe(2)
+  })
+
+  it('da la vuelta al pasarse por cualquiera de los dos lados', () => {
+    expect(wrapIndex(3, 3)).toBe(0)
+    expect(wrapIndex(-1, 3)).toBe(2)
+    expect(wrapIndex(-4, 3)).toBe(2)
+  })
+
+  it('sin fotos devuelve 0 en vez de NaN', () => {
+    expect(wrapIndex(1, 0)).toBe(0)
   })
 })

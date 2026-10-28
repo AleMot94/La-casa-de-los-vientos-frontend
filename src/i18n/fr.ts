@@ -78,6 +78,8 @@ export const fr: Translation = {
   'gallery.prev': 'Photo précédente',
   'gallery.next': 'Photo suivante',
   'gallery.counter': '{current} sur {total}',
+  'gallery.open': 'Voir les photos de {name}',
+  'gallery.close': 'Fermer la galerie',
 
   'facilities.overline': 'Espaces de Repos & Nature',
   'facilities.title': 'Des installations pensées pour se reconnecter',

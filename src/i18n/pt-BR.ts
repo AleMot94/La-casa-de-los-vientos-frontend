@@ -78,6 +78,8 @@ export const ptBR: Translation = {
   'gallery.prev': 'Foto anterior',
   'gallery.next': 'Próxima foto',
   'gallery.counter': '{current} de {total}',
+  'gallery.open': 'Ver as fotos de {name}',
+  'gallery.close': 'Fechar a galeria',
 
   'facilities.overline': 'Espaços de Descanso & Natureza',
   'facilities.title': 'Instalações pensadas para se reconectar',

@@ -77,6 +77,8 @@ export const en: Translation = {
   'gallery.prev': 'Previous photo',
   'gallery.next': 'Next photo',
   'gallery.counter': '{current} of {total}',
+  'gallery.open': 'View photos of {name}',
+  'gallery.close': 'Close gallery',
 
   'facilities.overline': 'Spaces for Rest & Nature',
   'facilities.title': 'Facilities designed to reconnect',

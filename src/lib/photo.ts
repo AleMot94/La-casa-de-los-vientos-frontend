@@ -41,3 +41,8 @@ export function idsInFolder(photos: Record<string, PhotoData>, folder: string): 
 export function indexPhotos(list: PhotoData[]): Record<string, PhotoData> {
   return Object.fromEntries(list.map((photo) => [photo.id, photo]))
 }
+
+/** Índice circular: pasar de la última foto a la primera (y de la primera a la última). `wrapIndex(-1, 3)` → `2`. */
+export function wrapIndex(index: number, total: number): number {
+  return total <= 0 ? 0 : ((index % total) + total) % total
+}
