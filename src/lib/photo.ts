@@ -26,7 +26,23 @@ export function pickSrc(files: PhotoFile[], minWidth = 800): PhotoFile {
   return sorted.find((file) => file.width >= minWidth) ?? sorted[sorted.length - 1]
 }
 
+/**
+ * Ids de las fotos numeradas de una carpeta, en orden: `rooms/01-sonqoy` → `rooms/01-sonqoy/01`, `…/02`…
+ * Ignora lo que no sea `<carpeta>/NN` (por ejemplo la `portada`) y las carpetas vecinas.
+ */
+export function idsInFolder(photos: Record<string, PhotoData>, folder: string): string[] {
+  const prefix = `${folder}/`
+  return Object.keys(photos)
+    .filter((id) => id.startsWith(prefix) && /^\d{2}$/.test(id.slice(prefix.length)))
+    .sort()
+}
+
 /** Lista del backend → registro por id: `[{ id: 'a', … }]` → `{ a: { id: 'a', … } }`. Si un id se repite, gana el último. */
 export function indexPhotos(list: PhotoData[]): Record<string, PhotoData> {
   return Object.fromEntries(list.map((photo) => [photo.id, photo]))
+}
+
+/** Índice circular: pasar de la última foto a la primera (y de la primera a la última). `wrapIndex(-1, 3)` → `2`. */
+export function wrapIndex(index: number, total: number): number {
+  return total <= 0 ? 0 : ((index % total) + total) % total
 }

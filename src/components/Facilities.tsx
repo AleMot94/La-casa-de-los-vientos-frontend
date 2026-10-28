@@ -34,7 +34,7 @@ export function Facilities() {
                   <p className="max-w-lg text-body text-ink-soft">{t(`facility.${facility.id}.text`)}</p>
                 </div>
                 <PhotoGallery
-                  ids={facility.photos}
+                  folder={facility.photoFolder}
                   name={title}
                   ratio="3/2"
                   sizes={FACILITY_SIZES}

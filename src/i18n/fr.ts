@@ -59,6 +59,9 @@ export const fr: Translation = {
   'about.caption.title': 'Patio des Jasmins',
   'about.caption.text': 'Un lieu pour le thé andin et la lecture au coucher du soleil',
   'about.eco': 'Construction écologique en terre cuite',
+  'about.carousel.label': 'Photos de l’auberge',
+  'about.carousel.alt': '{name}, photo {current} sur {total}',
+  'about.carousel.goTo': 'Afficher la photo {current} sur {total}',
 
   'rooms.overline': 'Chambres',
   'rooms.title': 'Un repos profond en harmonie avec la terre',
@@ -75,6 +78,8 @@ export const fr: Translation = {
   'gallery.prev': 'Photo précédente',
   'gallery.next': 'Photo suivante',
   'gallery.counter': '{current} sur {total}',
+  'gallery.open': 'Voir les photos de {name}',
+  'gallery.close': 'Fermer la galerie',
 
   'facilities.overline': 'Espaces de Repos & Nature',
   'facilities.title': 'Des installations pensées pour se reconnecter',

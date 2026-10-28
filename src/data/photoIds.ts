@@ -4,5 +4,8 @@
  * Es el mismo id que el backend devuelve en `PhotoData.id` (ver `src/api/contract.ts`).
  */
 export function photoIds(folder: string, count: number): string[] {
-  return Array.from({ length: count }, (_, i) => `${folder}/${String(i + 1).padStart(2, '0')}`)
+  return Array.from(
+    { length: count },
+    (_, i) => `${folder}/${String(i + 1).padStart(2, "0")}`,
+  );
 }

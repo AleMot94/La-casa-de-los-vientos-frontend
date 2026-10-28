@@ -244,9 +244,10 @@ export function ContactForm({ endpoint }: { endpoint?: string }) {
                 >
                   {t('contact.whatsapp')}
                 </a>
-                <a href={`mailto:${siteConfig.contact.email}`} className={link}>
+                {/* Solo informativo: el correo no es un enlace. */}
+                <span className="inline-flex min-h-11 items-center font-semibold break-all text-ink">
                   {siteConfig.contact.email}
-                </a>
+                </span>
               </div>
             </div>
           )}

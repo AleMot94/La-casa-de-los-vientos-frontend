@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { PhotoData } from '../api/contract'
 import { loadPhotos } from '../api/photos'
-import { indexPhotos } from '../lib/photo'
+import { idsInFolder, indexPhotos } from '../lib/photo'
 import { PhotosContext, type Photos, type PhotosStatus } from './context'
 
 interface State {
@@ -34,7 +34,11 @@ export function PhotosProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const value = useMemo<Photos>(
-    () => ({ status: state.status, getPhoto: (id) => state.photos[id] }),
+    () => ({
+      status: state.status,
+      getPhoto: (id) => state.photos[id],
+      idsIn: (folder) => idsInFolder(state.photos, folder),
+    }),
     [state],
   )
 

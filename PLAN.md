@@ -6,7 +6,7 @@ estructura y convenciones está en `CLAUDE.md`; el arranque, la variable de ento
 ## Hecho (rama `feat/landing-v2`)
 - **Datos y contrato:** `src/data/*` (7 habitaciones, 4 instalaciones, plataformas, datos del negocio) y `src/api/contract.ts`.
 - **Idiomas:** español, inglés, francés y portugués de Brasil, con diccionarios tipados y selector. fr y pt-BR son un primer borrador.
-- **Fotos:** `Photo` y `PhotoGallery` (carrusel con carga diferida) y el registro de fotos en un Context (`PhotosProvider`). Las fotos las sirve el backend.
+- **Fotos:** `Photo` y `PhotoGallery` (carrusel con carga diferida) y el registro de fotos en un Context (`PhotosProvider`). Las fotos las sirve el backend y el front muestra todas las de cada carpeta (`GET /api/photos` conectado por el proxy de Vite).
 - **Hero → WhatsApp:** formulario de consulta con validación y mensaje en el idioma activo.
 - **Contacto:** mapa, tarjetas de Airbnb/Booking y formulario hacia el backend propio (`VITE_CONTACT_ENDPOINT`).
 
@@ -18,8 +18,7 @@ estructura y convenciones está en `CLAUDE.md`; el arranque, la variable de ento
 - URLs de los anuncios de Airbnb y Booking en `src/data/platforms.ts` (y, si se quiere, puntuación y cantidad de reseñas).
 - Textos de Patios, Desayunador, Pileta y Anfitriones, en los 4 idiomas.
 - Logo: un archivo `src/assets/logo.svg|png|webp|jpg` (se detecta solo).
-- Fotos: implementar `loadPhotos` en `src/api/photos.ts` (`GET /api/photos` → `PhotoData[]`).
-- Contacto: implementar `POST /api/contact` y definir `VITE_CONTACT_ENDPOINT` al compilar (ver `README.md`).
+- Producción: compilar con `VITE_CONTACT_ENDPOINT=/api/contact` y que el servidor web reenvíe `/api/` y `/photos/` al backend (ver `FRONTEND.md`, sección 7).
 - Línea de privacidad del formulario: confirmar el texto definitivo (hoy lleva `TODO`).
 - Revisión humana de fr y pt-BR, y confirmar las afirmaciones heredadas del mockup (`TODO(confirmar)` en `src/i18n/es.ts`).
 - Open Graph: las etiquetas ya están en `index.html`; falta `og:image` (la define el dueño) y `og:url` (cuando haya dominio). Mismo caso para el `Sitemap:` de `public/robots.txt`.

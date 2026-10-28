@@ -14,6 +14,8 @@ export interface Photos {
   status: PhotosStatus
   /** Datos de una foto, o `undefined` si el backend todavía no la entregó (o no existe). */
   getPhoto: (id: string) => PhotoData | undefined
+  /** Ids de las fotos numeradas de una carpeta (`rooms/01-sonqoy`) que el backend entregó, en orden. */
+  idsIn: (folder: string) => string[]
 }
 
 export const PhotosContext = createContext<Photos | null>(null)

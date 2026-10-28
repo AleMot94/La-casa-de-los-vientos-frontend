@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { PhotoData } from '../api/contract'
-import { buildSrcSet, fallbackFiles, indexPhotos, pickSrc } from './photo'
+import { buildSrcSet, fallbackFiles, idsInFolder, indexPhotos, pickSrc, wrapIndex } from './photo'
 
 const files = [
   { url: '/x-1200.webp', width: 1200 },
@@ -71,5 +71,44 @@ describe('indexPhotos', () => {
     const vieja = foto('hero', 1000)
     const nueva = foto('hero', 2000)
     expect(indexPhotos([vieja, nueva]).hero).toBe(nueva)
+  })
+})
+
+describe('idsInFolder', () => {
+  const registro = indexPhotos(
+    ['rooms/01-sonqoy/02', 'rooms/01-sonqoy/01', 'rooms/01-sonqoy/portada', 'rooms/01-sonqoy-b/01', 'rooms/02-el-fuego/01', 'hero'].map(
+      (id) => ({ id, width: 3000, height: 2000, files: {} }),
+    ),
+  )
+
+  it('devuelve las numeradas de la carpeta, en orden', () => {
+    expect(idsInFolder(registro, 'rooms/01-sonqoy')).toEqual(['rooms/01-sonqoy/01', 'rooms/01-sonqoy/02'])
+  })
+
+  it('ignora la portada y las carpetas con nombre parecido', () => {
+    expect(idsInFolder(registro, 'rooms/01-sonqoy')).not.toContain('rooms/01-sonqoy/portada')
+    expect(idsInFolder(registro, 'rooms/01-sonqoy')).not.toContain('rooms/01-sonqoy-b/01')
+  })
+
+  it('una carpeta sin fotos da una lista vacía', () => {
+    expect(idsInFolder(registro, 'facilities/patios')).toEqual([])
+    expect(idsInFolder({}, 'rooms/01-sonqoy')).toEqual([])
+  })
+})
+
+describe('wrapIndex', () => {
+  it('deja igual un índice dentro del rango', () => {
+    expect(wrapIndex(0, 3)).toBe(0)
+    expect(wrapIndex(2, 3)).toBe(2)
+  })
+
+  it('da la vuelta al pasarse por cualquiera de los dos lados', () => {
+    expect(wrapIndex(3, 3)).toBe(0)
+    expect(wrapIndex(-1, 3)).toBe(2)
+    expect(wrapIndex(-4, 3)).toBe(2)
+  })
+
+  it('sin fotos devuelve 0 en vez de NaN', () => {
+    expect(wrapIndex(1, 0)).toBe(0)
   })
 })

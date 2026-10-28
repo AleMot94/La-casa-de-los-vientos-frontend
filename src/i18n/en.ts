@@ -58,6 +58,9 @@ export const en: Translation = {
   'about.caption.title': 'Jasmine Courtyard',
   'about.caption.text': 'A place for Andean tea and reading at sunset',
   'about.eco': 'Eco-friendly baked-earth construction',
+  'about.carousel.label': 'Photos of the inn',
+  'about.carousel.alt': '{name}, photo {current} of {total}',
+  'about.carousel.goTo': 'Show photo {current} of {total}',
 
   'rooms.overline': 'Rooms',
   'rooms.title': 'Deep rest in tune with the land',
@@ -74,6 +77,8 @@ export const en: Translation = {
   'gallery.prev': 'Previous photo',
   'gallery.next': 'Next photo',
   'gallery.counter': '{current} of {total}',
+  'gallery.open': 'View photos of {name}',
+  'gallery.close': 'Close gallery',
 
   'facilities.overline': 'Spaces for Rest & Nature',
   'facilities.title': 'Facilities designed to reconnect',
